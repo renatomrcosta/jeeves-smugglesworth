@@ -1,0 +1,23 @@
+{
+  "name": "jeeves-smugglesworth",
+  "version": "1.0.0",
+  "description": "QoL butler for teams on slack",
+  "main": "index.ts",
+  "scripts": {
+    "start": "node index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renatomrcosta/jeeves-smugglesworth.git"
+  },
+  "author": "rrc",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/renatomrcosta/jeeves-smugglesworth/issues"
+  },
+  "homepage": "https://github.com/renatomrcosta/jeeves-smugglesworth#readme",
+  "dependencies": {
+    "@slack/client": "^4.6.0"
+  }
+}
