@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/renatomrcosta/jeeves-smugglesworth#readme",
   "dependencies": {
-    "@slack/client": "^4.6.0"
+    "@slack/client": "^4.6.0",
+    "firebase": "^5.5.5"
   }
 }
