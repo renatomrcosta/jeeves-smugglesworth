@@ -1,7 +1,7 @@
 const { RTMClient } = require('@slack/client');
 const serviceAccountKey = require('./serviceAccountKey.json');
 const firebase = require('firebase');
-const slackConf = require(';/slack.json')
+const slackConf = require(';/slack.json');
 
 
 const rtm = new RTMClient(slackConf.api_token);
