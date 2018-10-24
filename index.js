@@ -1,6 +1,5 @@
 var RTMClient = require('@slack/client').RTMClient;
-var environments = require('./environments.ts');
-var rtm = new RTMClient(environments.environment.bot_token);
+var rtm = new RTMClient('');
 rtm.start();
 rtm.on("message", function (message) {
     if (message.text.toLowerCase().includes("merge")) {

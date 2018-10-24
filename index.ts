@@ -1,7 +1,6 @@
 const { RTMClient } = require('@slack/client');
-const environments = require('./environments.ts');
 
-const rtm = new RTMClient(environments.environment.bot_token);
+const rtm = new RTMClient('');
 
 rtm.start();
 
