@@ -11,7 +11,18 @@ class InChannelResponse extends ResponseSlashCommand {
         super("in_channel");
     }
 }
-export {ResponseSlashCommand, InChannelResponse}
+
+/**
+ * "For the best clarity of intent, we recommend always declaring your intended response_type, even if you wish to use
+ *    the default ephemeral value."
+ * {@link https://api.slack.com/slash-commands}
+ */
+class PrivateResponse extends ResponseSlashCommand {
+    constructor(){
+        super("ephemeral");
+    }
+}
+export {ResponseSlashCommand, InChannelResponse, PrivateResponse}
 
 
 
