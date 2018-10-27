@@ -21,7 +21,7 @@ export const done = functions.https.onRequest((request, response) => {
             return firestore.collection(`channels`).doc(channelId).collection("queue").get().then((userInQueue)=>{
                 const inChannelResponse = new InChannelResponse();
                 if (userInQueue.empty){
-                    inChannelResponse.text = `There is nobody on line .... Come on <@${postContent.user_id}>`;
+                    inChannelResponse.text = `There is nobody in the line .... Come on <@${postContent.user_id}> what are you doing!!!`;
                     return inChannelResponse;
                 }
 
