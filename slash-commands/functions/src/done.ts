@@ -1,6 +1,5 @@
 import * as functions from 'firebase-functions';
-import {InChannelResponse} from "./response.slash.command";
-import {parseSlashCommandPostContent, PostContent} from "./slash-command.common";
+import {parseSlashCommandPostContent, PostContent, InChannelResponse} from "./slash-command.common";
 
 // Start writing Firebase Functions
 // https://firebase.google.com/docs/functions/typescript
