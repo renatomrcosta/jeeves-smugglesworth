@@ -1,17 +1,17 @@
 class PostContent {
     // private _obj: PostContent = new PostContent();
 
-    token:string;
-    text:string;
-    team_id:string;
-    command:string;
-    channel_name:string;
-    user_name:string;
-    response_url:string;
-    user_id:string;
-    channel_id:string;
+    private _token:string;
+    private _text:string;
+    private _team_id:string;
+    private _command:string;
+    private _channel_name:string;
+    private _user_name:string;
+    private _response_url:string;
+    private _user_id:string;
+    private _channel_id:string;
 
-    constructor(token:string,
+    private constructor(token:string,
                 text:string,
                 team_id:string,
                 command:string,
@@ -20,16 +20,44 @@ class PostContent {
                 response_url:string,
                 user_id:string,
                 channel_id:string) {
-        this.token = token;
-        this.text = text;
-        this.team_id = team_id;
-        this.command = command;
-        this.channel_name = channel_name;
-        this.user_name = user_name;
-        this.response_url = response_url;
-        this.user_id = user_id;
-        this.channel_id = channel_id;
+        this._token = token;
+        this._text = text;
+        this._team_id = team_id;
+        this._command = command;
+        this._channel_name = channel_name;
+        this._user_name = user_name;
+        this._response_url = response_url;
+        this._user_id = user_id;
+        this._channel_id = channel_id;
 
+    }
+
+    get token():string {
+        return this._token;
+    }
+    get text():string {
+        return this._token;
+    }
+    get team_id():string {
+        return this._team_id;
+    }
+    get command():string {
+        return this._command;
+    }
+    get channel_name():string {
+        return this._channel_name;
+    }
+    get user_name():string {
+        return this._user_name;
+    }
+    get response_url():string {
+        return this._response_url;
+    }
+    get user_id():string {
+        return this._user_id;
+    }
+    get channel_id():string {
+        return this._channel_id;
     }
 
     static builder = class PostContentBuilder {
