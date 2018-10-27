@@ -32,7 +32,7 @@ export const merge = functions.https.onRequest((request, response) => {
                     });
                 }
 
-                inChannelResponse.text = `Hold on a sec <@${postContent.user_id}>  ... It seems that you are already on line for merge`;
+                inChannelResponse.text = `Hold on a sec <@${postContent.user_id}>  ... It seems that you are already in the line for merge`;
                 return inChannelResponse;
             });
         }).then((userInQueue)=>{
