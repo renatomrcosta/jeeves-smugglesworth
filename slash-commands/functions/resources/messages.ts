@@ -1,0 +1,15 @@
+export const showQueue = 'The queue currently looks like this:';
+export const nextTurn = 'It\'s asd \'s turn!';
+export const kickedFromQueue = '%s is being kicked from the merging queue!';
+export const queueIsEmpty = 'The queue is already empty!';
+export const noMergeInProcess = 'There is no merging in process';
+export const firstInLine = 'Hey %s, you are the first in line! You can go right ahead!';
+export const waitForABit = 'Alright alright alright %s! Sit tight, and wait a bit until your turn';
+export const waitYourTurn = 'Wait your turn %s is still merging!';
+export const mergedSuccessfully = '%s has merged successfully!';
+export const validCommands = 'The valid commands are:';
+export const merge_msg = 'add yourself to the merging queue';
+export const done = 'remove yourself from the merging queue';
+export const kick = 'kick current merging user from the queue';
+export const status = 'print queue';
+export const help = 'list all available commands';

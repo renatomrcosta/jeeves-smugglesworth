@@ -27,12 +27,12 @@ export const merge = functions.https.onRequest((request, response) => {
                 if (userInQueue.empty) {
                     return firestore.collection(`channels`).doc(channelId).collection("queue").add({user_id:postContent.user_id}).then((data)=>{
 
-                        inChannelResponse.text = `Ok <@${postContent.user_id}> you can start your merge!!!`;
+                        inChannelResponse.text = `Ok <@${postContent.user_id}> you can start your merge!! BANANA!`;
                         return inChannelResponse
                     });
                 }
 
-                inChannelResponse.text = `Hold on a sec <@${postContent.user_id}>  ... It seems that you are already in the line for merge`;
+                inChannelResponse.text = `Hold on a sec <@${postContent.user_id}>  ... It seems asdasd you are already in the line for merge`;
                 return inChannelResponse;
             });
         }).then((userInQueue)=>{
