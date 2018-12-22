@@ -1,29 +1,40 @@
+import mergeFunction from "./handlers/merge";
+
 const express = require("express");
 const bodyParser = require('body-parser');
 
 const app = express();
 const port = process.env.PORT || 4521;
-const token = process.env.SLACK_TOKEN || require('./slack.json').api_token;
 
-const { WebClient } = require('@slack/client');
-const web = new WebClient(token);
+
 
 app.use(bodyParser.json()); // for parsing application/json
 
-app.get('/', (req, res) => res.send('Hello World!'));
+app.get('/', (req, res) => res.send('Hello sir / madam!'));
 
 app.route('/jeeves')
     .post((req, res) => {
         const payload = req.body;
         const challenge = payload.challenge;
+
         console.log(payload);
+
         if(payload.event.type === 'app_mention'){
-            if(payload.event.text.includes('merge')){
-                web.chat.postMessage({
-                    channel: payload.event.channel,
-                    text: 'Auei! User <@' + payload.event.user + '> has queued up!'
-                });
+
+            const request_text = payload.event.text.toUpperCase();
+            switch (request_text) {
+                case 'MERGE':
+                    mergeFunction(payload);
+                    break;
+                case 'STATUS':
+                    break;
+                case 'DONE':
+                    break;
+                case 'HELP':
+                    break;
             }
+
+
         }
 
         res.status(200).send({
