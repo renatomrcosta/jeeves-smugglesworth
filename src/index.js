@@ -1,9 +1,11 @@
-var mergeFunction = require('./handlers/merge');
-var express = require("express");
-var bodyParser = require('body-parser');
-var app = express();
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var express_1 = require("express");
+var body_parser_1 = require("body-parser");
+var merge_1 = require("./handlers/merge");
+var app = express_1.default();
 var port = process.env.PORT || 4521;
-app.use(bodyParser.json()); // for parsing application/json
+app.use(body_parser_1.default.json()); // for parsing application/json
 app.get('/', function (req, res) { return res.send('Hello sir / madam!'); });
 app.route('/jeeves')
     .post(function (req, res) {
@@ -14,7 +16,7 @@ app.route('/jeeves')
         var request_text = payload.event.text.toUpperCase();
         switch (request_text) {
             case 'MERGE':
-                mergeFunction(payload);
+                merge_1.default(payload);
                 break;
             case 'STATUS':
                 break;
