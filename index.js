@@ -7,7 +7,7 @@ app.get('/', function (req, res) { return res.send('Hello World!'); });
 app.route('/jeeves')
     .post(function (req, res) {
     var challenge = req.body.challenge;
-    res.ok({
+    res.status(200).send({
         challenge: challenge
     });
 });

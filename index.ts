@@ -12,7 +12,7 @@ app.route('/jeeves')
     .post((req, res) => {
         const challenge = req.body.challenge;
 
-        res.ok({
+        res.status(200).send({
             challenge: challenge
         });
     });
