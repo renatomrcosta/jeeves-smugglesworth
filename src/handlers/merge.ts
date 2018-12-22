@@ -1,4 +1,4 @@
-import sendSlackMessage from "../services/messages.service";
+const sendSlackMessage = require('../services/messages.service');
 
 let mergeFunction = (payload) => {
     console.log(payload);

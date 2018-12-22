@@ -1,6 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var merge_1 = require("./handlers/merge");
+var mergeFunction = require('./handlers/merge');
 var express = require("express");
 var bodyParser = require('body-parser');
 var app = express();
@@ -16,7 +14,7 @@ app.route('/jeeves')
         var request_text = payload.event.text.toUpperCase();
         switch (request_text) {
             case 'MERGE':
-                merge_1.default(payload);
+                mergeFunction(payload);
                 break;
             case 'STATUS':
                 break;

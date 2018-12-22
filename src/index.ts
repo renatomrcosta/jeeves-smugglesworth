@@ -1,12 +1,10 @@
-import mergeFunction from "./handlers/merge";
+const mergeFunction = require('./handlers/merge');
 
 const express = require("express");
 const bodyParser = require('body-parser');
 
 const app = express();
 const port = process.env.PORT || 4521;
-
-
 
 app.use(bodyParser.json()); // for parsing application/json
 
