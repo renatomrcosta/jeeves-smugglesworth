@@ -5,6 +5,7 @@ const {mergeHandler} = require("./handlers/merge");
 const {doneHandler} = require("./handlers/done");
 const {statusHandler} = require("./handlers/status");
 const {helpHandler} = require("./handlers/help");
+const {kickHandler} = require("./handlers/kick");
 
 const app = express();
 const port = process.env.PORT || 4521;
@@ -26,6 +27,8 @@ app.route('/jeeves')
             const request_text = payload.event.text.toUpperCase();
             if(request_text.includes('MERGE')){
                 mergeHandler(payload);
+            } else if(request_text.includes('KICK')){
+                kickHandler(payload);
             } else if(request_text.includes('STATUS')){
                 statusHandler(payload);
             } else if(request_text.includes('DONE')){
