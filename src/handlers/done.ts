@@ -17,9 +17,16 @@ const doneHandler = (payload, event_type) => {
                    messageList.waitYourTurn.replace('%s', messageService.mentionSlackUser(snapshotUserId)));
            } else {
                const doc = channelSnapshot.docs.shift();
-               messageService.sendMessage(channel_id,
-                   messageList.kickedFromQueue.replace('%s', messageService.mentionSlackUser(user_id)));
-               queueService.deleteQueue(doc);
+
+               if(event_type === 'DONE'){
+                   messageService.sendMessage(channel_id,
+                       messageList.mergedSuccessfully.replace('%s', messageService.mentionSlackUser(user_id)));
+                   queueService.deleteQueue(doc);
+               } else if(event_type === 'KICK'){
+                   messageService.sendMessage(channel_id,
+                       messageList.kickedFromQueue.replace('%s', messageService.mentionSlackUser(user_id)));
+                   queueService.deleteQueue(doc);
+               }
 
                callNextUserInQueue(channel_id, channelSnapshot.docs);
            }
