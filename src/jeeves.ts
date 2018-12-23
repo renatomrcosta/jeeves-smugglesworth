@@ -13,17 +13,22 @@ const {helpHandler} = require("./handlers/help");
 const app = express();
 app.use(bodyParser.json()); // for parsing application/json
 
+//Registers a global route that will be exposed in Cloud Functions
 app.route('*')
     .post((req, res) => {
         const payload = req.body;
         const challenge = payload.challenge;
 
+        //We must reply 200 in under 3s to Slack, and in case a random "challenge" is sent, it has to be delivered back
+        //Event API thingie
         res.status(200).send({
             challenge: challenge
         });
 
+        //Calling the event as a promise to return asap.
         new Promise((resolve, reject) => {
             if(payload.event && payload.event.type === 'app_mention'){
+                //Check which event, in order or importance
                 const request_text = payload.event.text.toUpperCase();
                 if(request_text.includes('MERGE')){
                     mergeHandler(payload);
@@ -48,6 +53,8 @@ app.route('*')
         });
     });
 
+
+//This is where the export to Cloud functions happens. Also packages the app variable to be started by jeeves.local.ts
 const api = functions.https.onRequest(app);
 
 module.exports = {

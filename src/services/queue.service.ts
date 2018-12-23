@@ -2,9 +2,9 @@ const admin = require('firebase-admin');
 const firestore = admin.firestore();
 firestore.settings({timestampsInSnapshots: true});
 
-const addToQueue = (channel_id, user_id) => {
+//Service that deals with the CRUD of the system: Adding items to the collection, removing them and querying them.
 
-    console.log("adding to collection!");
+const addToQueue = (channel_id, user_id) => {
     firestore.collection('queues').add({
         channel_id: channel_id,
         user_id: user_id,
@@ -25,6 +25,7 @@ const deleteQueue = (doc) => {
         .delete();
 };
 
+//Exports a 'service'-like object.
 module.exports = {
     queueService: {
         addToQueue: addToQueue,
