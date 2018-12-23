@@ -12,12 +12,12 @@ const app = express();
 
 app.use(bodyParser.json()); // for parsing application/json
 
-app.get('/', (req, res) => res.send('Hello sir / madam!'));
-
-app.route('/jeeves')
+app.route('*')
     .post((req, res) => {
         const payload = req.body;
         const challenge = payload.challenge;
+
+        console.log(req.body);
 
         res.status(200).send({
             challenge: challenge
@@ -43,7 +43,7 @@ const api = functions.https.onRequest(app);
 
 module.exports = {
   app: app,
-  api: api
+  jeeves: api
 };
 
 // const { RTMClient } = require('@slack/client');
