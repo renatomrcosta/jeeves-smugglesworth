@@ -1,7 +1,9 @@
-import  from '../services/messages.service';
-import sendSlackMessage from "../services/messages.service";
+const {messageService} = require("../services/messages.service");
 
-let mergeFunction = (payload) => {
-    sendSlackMessage(payload.event.channel, "User <@" + payload.event.user  + "> is ready to merge!")
+const merge = (payload) => {
+    console.log(messageService);
+    messageService.sendMessage(payload.event.channel, "User <@" + payload.event.user  + "> is ready to merge!")
 };
-export default mergeFunction;
+module.exports = {
+    mergeHandler: merge
+};

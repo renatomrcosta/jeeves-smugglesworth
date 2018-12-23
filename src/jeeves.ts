@@ -1,7 +1,7 @@
-import express from "express";
-import bodyParser from "body-parser";
+const express = require("express");
+const bodyParser = require("body-parser");
 
-import mergeFunction from "./handlers/merge";
+const {mergeHandler} = require("./handlers/merge");
 
 const app = express();
 const port = process.env.PORT || 4521;
@@ -14,10 +14,10 @@ app.route('/jeeves')
     .post((req, res) => {
         const payload = req.body;
         const challenge = payload.challenge;
-        if(payload.event.type === 'app_mention'){
+        if(payload.event && payload.event.type === 'app_mention'){
             const request_text = payload.event.text.toUpperCase();
             if(request_text.includes('MERGE')){
-                mergeFunction(payload);
+                mergeHandler(payload);
             } else if(request_text.includes('STATUS')){
                 console.log('Status');
             } else if(request_text.includes('DONE')){
