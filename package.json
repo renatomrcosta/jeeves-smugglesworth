@@ -25,7 +25,8 @@
     "express": "^4.16.4",
     "firebase": "^5.5.5",
     "firebase-admin": "^6.0.0",
-    "firebase-functions": "^2.0.3"
+    "firebase-functions": "^2.0.3",
+    "promise": "^8.0.2"
   },
   "devDependencies": {
     "typescript": "~2.8.3"

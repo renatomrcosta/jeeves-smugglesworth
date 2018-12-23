@@ -1,8 +1,9 @@
 const functions = require("firebase-functions");
 const express = require("express");
 const bodyParser = require("body-parser");
-const firebaseInit = require('./firebase.init');
+const Promise = require('promise');
 
+const firebaseInit = require('./firebase.init');
 const {mergeHandler} = require("./handlers/merge");
 const {doneHandler} = require("./handlers/done");
 const {statusHandler} = require("./handlers/status");
@@ -23,20 +24,27 @@ app.route('*')
             challenge: challenge
         });
 
-        if(payload.event && payload.event.type === 'app_mention'){
-            const request_text = payload.event.text.toUpperCase();
-            if(request_text.includes('MERGE')){
-                mergeHandler(payload);
-            } else if(request_text.includes('KICK')){
-                kickHandler(payload);
-            } else if(request_text.includes('STATUS')){
-                statusHandler(payload);
-            } else if(request_text.includes('DONE')){
-                doneHandler(payload);
-            } else if(request_text.includes('HELP')){
-                helpHandler(payload);
+        new Promise((resolve, reject) => {
+            if(payload.event && payload.event.type === 'app_mention'){
+                const request_text = payload.event.text.toUpperCase();
+                if(request_text.includes('MERGE')){
+                    mergeHandler(payload);
+                } else if(request_text.includes('KICK')){
+                    kickHandler(payload);
+                } else if(request_text.includes('STATUS')){
+                    statusHandler(payload);
+                } else if(request_text.includes('DONE')){
+                    doneHandler(payload);
+                } else if(request_text.includes('HELP')){
+                    helpHandler(payload);
+                } else {
+                    reject();
+                }
+                resolve();
             }
-        }
+        }).then(() => {
+            console.log("EventType complete", payload.event.type);
+        });
     });
 
 const api = functions.https.onRequest(app);
