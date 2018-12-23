@@ -14,6 +14,11 @@ app.route('/jeeves')
     .post((req, res) => {
         const payload = req.body;
         const challenge = payload.challenge;
+
+        res.status(200).send({
+            challenge: challenge
+        });
+
         if(payload.event && payload.event.type === 'app_mention'){
             const request_text = payload.event.text.toUpperCase();
             if(request_text.includes('MERGE')){
@@ -25,11 +30,6 @@ app.route('/jeeves')
             } else if(request_text.includes('HELP')){
                 console.log('Help');
             }
-            res.end();
-        } else {
-            res.status(200).send({
-                challenge: challenge
-            });
         }
     });
 
