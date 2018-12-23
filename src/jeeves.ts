@@ -8,7 +8,6 @@ const {mergeHandler} = require("./handlers/merge");
 const {doneHandler} = require("./handlers/done");
 const {statusHandler} = require("./handlers/status");
 const {helpHandler} = require("./handlers/help");
-const {kickHandler} = require("./handlers/kick");
 
 const app = express();
 app.use(bodyParser.json()); // for parsing application/json
@@ -29,10 +28,10 @@ app.route('*')
                     mergeHandler(payload);
                     resolve("MERGE");
                 } else if(request_text.includes('DONE')){
-                    doneHandler(payload);
+                    doneHandler(payload, 'DONE');
                     resolve("DONE");
                 } else if(request_text.includes('KICK')){
-                    kickHandler(payload);
+                    doneHandler(payload, 'KICK');
                     resolve("KICK");
                 } else if(request_text.includes('STATUS')){
                     statusHandler(payload);
