@@ -13,8 +13,6 @@ const {kickHandler} = require("./handlers/kick");
 const app = express();
 app.use(bodyParser.json()); // for parsing application/json
 
-firebaseInit();
-
 app.route('*')
     .post((req, res) => {
         const payload = req.body;
@@ -29,21 +27,24 @@ app.route('*')
                 const request_text = payload.event.text.toUpperCase();
                 if(request_text.includes('MERGE')){
                     mergeHandler(payload);
+                    resolve("MERGE");
                 } else if(request_text.includes('KICK')){
                     kickHandler(payload);
+                    resolve("KICK");
                 } else if(request_text.includes('STATUS')){
                     statusHandler(payload);
+                    resolve("STATUS");
                 } else if(request_text.includes('DONE')){
                     doneHandler(payload);
-                } else if(request_text.includes('HELP')){
+                    resolve("DONE");
+                } else if(request_text.includes('HELP')) {
                     helpHandler(payload);
-                } else {
-                    reject();
+                    resolve("HELP");
                 }
-                resolve();
+                reject();
             }
-        }).then(() => {
-            console.log("EventType complete", payload.event.type);
+        }).then((eventType) => {
+            console.log("Evebt Complete: ", eventType);
         });
     });
 
