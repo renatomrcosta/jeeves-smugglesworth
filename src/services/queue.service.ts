@@ -12,8 +12,27 @@ const addToQueue = (channel_id, user_id) => {
     });
 };
 
+const isUserInQueue = (channel_id, user_id) => {
+  return firestore.collection('queues')
+      .where('channel_id', '==', channel_id)
+      .where('user_id', '==', user_id)
+      .get().then((docSnapshot) => {
+          console.log(docSnapshot);
+          return docSnapshot.exists;
+      });
+};
+
+const getQueueByChannelId = (channel_id) => {
+    return firestore.collection('queues')
+        .where('channel_id', '==', channel_id)
+        .get();
+
+};
+
 module.exports = {
     queueService: {
-        addToQueue: addToQueue
+        addToQueue: addToQueue,
+        isUserInQueue: isUserInQueue,
+        getQueueByChannelId: getQueueByChannelId
     }
 };

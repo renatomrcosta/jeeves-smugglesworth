@@ -1,13 +1,25 @@
 const {messageService} = require("../services/messages.service");
 const {queueService} = require('../services/queue.service');
+const messageList = require('../messages.json');
 
 const merge = (payload) => {
-    const channel = payload.event.channel;
-    const user = payload.event.user;
+    const channel_id = payload.event.channel;
+    const user_id = payload.event.user;
 
-    queueService.addToQueue(channel, user);
-    messageService.sendMessage(channel, "User <@" + user  + "> is ready to merge!")
+    queueService.getQueueByChannelId(channel_id).then((channelSnapshot) => {
+        if(channelSnapshot.empty){
+            messageService.sendMessage(channel_id, messageList.firstInLine.replace("%s", mentionUser(user_id)));
+        } else {
+            messageService.sendMessage(channel_id, messageList.waitForABit.replace("%s", mentionUser(user_id)));
+        }
+        queueService.addToQueue(channel_id, user_id);
+    });
 };
+
+const mentionUser = (user_id) => {
+    return '<@' + user_id + '>';
+};
+
 module.exports = {
     mergeHandler: merge
 };
