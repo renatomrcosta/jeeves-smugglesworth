@@ -6,8 +6,19 @@ This app exposes a simple ExpressJS endpoint ('/jeeves') that takes an event POS
 
 Whenever Jeeves is mentioned, we can execute a function for each expected command.
 
-The template has been laid bare. Now we need first to implement the current code based on Erico's first slack implementation, then integrate the storage in a database (be it firebase or otherwise).
+In slack, you can mention the Bot User @Jeeves with any of the following commands:
 
+- Merge
+- Done
+- Kick
+- Status
+- Help
+
+#### How to Deploy
+
+Run the following command to deploy jeeves to firebase:
+
+`npm run deploy`
 
 #### How to execute (locally):
 
@@ -17,7 +28,7 @@ As always, first NPM install:
 
 Secondly, run the jeeves.ts file:
 
-`npm src/jeeves.ts`
+`npm src/jeeves.local.ts`
 
 Have ngrok installed (https://ngrok.com/) and open your local port to the web:
 
@@ -26,3 +37,5 @@ Have ngrok installed (https://ngrok.com/) and open your local port to the web:
 Take the forwarded URL and configure our event subscriptions at (https://api.slack.com/apps/AD5164XKP/event-subscriptions?)
 
 Example: https://071e360d.ngrok.io/jeeves
+
+Save your changes and jeeves should be working.
