@@ -25,11 +25,12 @@ app.route('/jeeves')
             } else if(request_text.includes('HELP')){
                 console.log('Help');
             }
+            res.end();
+        } else {
+            res.status(200).send({
+                challenge: challenge
+            });
         }
-
-        res.status(200).send({
-            challenge: challenge
-        });
     });
 
 app.listen(port, () => console.log(`Jeeves app Live on port ${port}!`));
