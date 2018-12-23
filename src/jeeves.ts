@@ -1,3 +1,4 @@
+const functions = require("firebase-functions");
 const express = require("express");
 const bodyParser = require("body-parser");
 
@@ -8,7 +9,6 @@ const {helpHandler} = require("./handlers/help");
 const {kickHandler} = require("./handlers/kick");
 
 const app = express();
-const port = process.env.PORT || 4521;
 
 app.use(bodyParser.json()); // for parsing application/json
 
@@ -39,7 +39,12 @@ app.route('/jeeves')
         }
     });
 
-app.listen(port, () => console.log(`Jeeves app Live on port ${port}!`));
+const api = functions.https.onRequest(app);
+
+module.exports = {
+  app: app,
+  api: api
+};
 
 // const { RTMClient } = require('@slack/client');
 // const {chat} = require('@slack/client');
