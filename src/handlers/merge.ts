@@ -1,7 +1,12 @@
 const {messageService} = require("../services/messages.service");
+const {queueService} = require('../services/queue.service');
 
 const merge = (payload) => {
-    messageService.sendMessage(payload.event.channel, "User <@" + payload.event.user  + "> is ready to merge!")
+    const channel = payload.event.channel;
+    const user = payload.event.user;
+
+    queueService.addToQueue(channel, user);
+    messageService.sendMessage(channel, "User <@" + user  + "> is ready to merge!")
 };
 module.exports = {
     mergeHandler: merge

@@ -1,6 +1,7 @@
 const functions = require("firebase-functions");
 const express = require("express");
 const bodyParser = require("body-parser");
+const firebaseInit = require('./firebase.init');
 
 const {mergeHandler} = require("./handlers/merge");
 const {doneHandler} = require("./handlers/done");
@@ -9,15 +10,14 @@ const {helpHandler} = require("./handlers/help");
 const {kickHandler} = require("./handlers/kick");
 
 const app = express();
-
 app.use(bodyParser.json()); // for parsing application/json
+
+firebaseInit();
 
 app.route('*')
     .post((req, res) => {
         const payload = req.body;
         const challenge = payload.challenge;
-
-        console.log(req.body);
 
         res.status(200).send({
             challenge: challenge
