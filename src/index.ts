@@ -2,6 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 
 import mergeFunction from "./handlers/merge";
+import sendSlackMessage from "./services/messages.service";
 
 const app = express();
 const port = process.env.PORT || 4521;
@@ -16,7 +17,6 @@ app.route('/jeeves')
         const challenge = payload.challenge;
         if(payload.event.type === 'app_mention'){
             const request_text = payload.event.text.toUpperCase();
-            console.log('request_text', request_text);
             if(request_text.includes('MERGE')){
                 mergeFunction(payload);
             } else if(request_text.includes('STATUS')){
