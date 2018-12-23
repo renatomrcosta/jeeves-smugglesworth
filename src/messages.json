@@ -13,5 +13,22 @@
   "done": "remove yourself from the merging queue",
   "kick": "kick current merging user from the queue",
   "status": "print queue",
-  "help": "list all available commands"
+  "help": {
+    "attachments": [
+      {
+        "mrkdwn_in": ["text", "pretext"],
+        "fallback": "Your friendly Merge flow butler! Jeeves will watch your channels and keep track of your merging procedure",
+        "color": "#36a64f",
+        "title": "Jeeves Smugglesworth",
+        "pretext": "Your friendly Merge flow butler!\nJeeves will watch your channels and keep track of your merging procedure",
+        "text": "- Merge -> Requests Jeeves for a spot in the merging queue.\n- Done -> Signals the end of your merge. However, it only works if you are the one in the merge queue at the moment\n- Kick -> Kicks whoever is in the queue at the moment. Good for those pesky git and runners, but use it wisely!\n- Status - Shows the status of the merge queue for the current channel\n- Help -> Shows this friendly message!"
+      },
+      {
+        "mrkdwn_in": ["text", "pretext"],
+        "fallback": "Your friendly Merge flow butler! Jeeves will watch your channels and keep track of your merging procedure",
+        "color": "#36a64f",
+        "text": "The source code can be found at https://github.com/renatomrcosta/jeeves-smugglesworth\nAll help is welcome!\n"
+      }
+    ]
+  }
 }
