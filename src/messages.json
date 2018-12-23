@@ -1,5 +1,5 @@
 {
-  "showQueue": "The queue currently looks like this: ",
+  "showQueue": "The queue currently looks like this: \n",
   "nextTurn": "It's %s's turn!",
   "kickedFromQueue": "%s is being kicked from the merging queue!",
   "queueIsEmpty": "The queue is already empty!",

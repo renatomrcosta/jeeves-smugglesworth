@@ -8,17 +8,15 @@ const merge = (payload) => {
 
     queueService.getQueueByChannelId(channel_id).then((channelSnapshot) => {
         if(channelSnapshot.empty){
-            messageService.sendMessage(channel_id, messageList.firstInLine.replace("%s", mentionUser(user_id)));
+            messageService.sendMessage(channel_id, messageList.firstInLine.replace("%s", messageService.mentionSlackUser(user_id)));
         } else {
-            messageService.sendMessage(channel_id, messageList.waitForABit.replace("%s", mentionUser(user_id)));
+            messageService.sendMessage(channel_id, messageList.waitForABit.replace("%s",messageService.mentionSlackUser(user_id)));
         }
         queueService.addToQueue(channel_id, user_id);
     });
 };
 
-const mentionUser = (user_id) => {
-    return '<@' + user_id + '>';
-};
+
 
 module.exports = {
     mergeHandler: merge

@@ -8,7 +8,7 @@ const addToQueue = (channel_id, user_id) => {
     firestore.collection('queues').add({
         channel_id: channel_id,
         user_id: user_id,
-        datetime: new Date()
+        queue_timestamp: new Date()
     });
 };
 
@@ -25,8 +25,8 @@ const isUserInQueue = (channel_id, user_id) => {
 const getQueueByChannelId = (channel_id) => {
     return firestore.collection('queues')
         .where('channel_id', '==', channel_id)
+        .orderBy('queue_timestamp', 'asc')
         .get();
-
 };
 
 module.exports = {

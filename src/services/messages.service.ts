@@ -10,8 +10,13 @@ const sendSlackMessage = (channel_id, message_text) => {
     });
 };
 
+const mentionSlackUser = (user_id) => {
+    return '<@' + user_id + '>';
+};
+
 module.exports = {
     messageService: {
-        sendMessage: sendSlackMessage
+        sendMessage: sendSlackMessage,
+        mentionSlackUser: mentionSlackUser
     }
 };
