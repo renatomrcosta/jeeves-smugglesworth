@@ -28,16 +28,16 @@ app.route('*')
                 if(request_text.includes('MERGE')){
                     mergeHandler(payload);
                     resolve("MERGE");
+                } else if(request_text.includes('DONE')){
+                    doneHandler(payload);
+                    resolve("DONE");
                 } else if(request_text.includes('KICK')){
                     kickHandler(payload);
                     resolve("KICK");
                 } else if(request_text.includes('STATUS')){
                     statusHandler(payload);
                     resolve("STATUS");
-                } else if(request_text.includes('DONE')){
-                    doneHandler(payload);
-                    resolve("DONE");
-                } else if(request_text.includes('HELP')) {
+                }  else if(request_text.includes('HELP')) {
                     helpHandler(payload);
                     resolve("HELP");
                 }
