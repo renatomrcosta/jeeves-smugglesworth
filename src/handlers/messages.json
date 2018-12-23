@@ -1,0 +1,17 @@
+{
+  "showQueue": "The queue currently looks like this: ",
+  "nextTurn": "It's %s's turn!",
+  "kickedFromQueue": "%s is being kicked from the merging queue!",
+  "queueIsEmpty": "The queue is already empty!",
+  "noMergeInProcess": "There is no merging in process",
+  "firstInLine": "Hey %s, you are the first in line! You can go right ahead!",
+  "waitForABit": "Alright alright alright %s! Sit tight, and wait a bit until your turn",
+  "waitYourTurn": "Wait your turn %s is still merging!",
+  "mergedSuccessfully": "%s has merged successfully!",
+  "validCommands": "The valid commands are: ",
+  "merge": "add yourself to the merging queue",
+  "done": "remove yourself from the merging queue",
+  "kick": "kick current merging user from the queue",
+  "status": "print queue",
+  "help": "list all available commands"
+}
