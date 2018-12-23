@@ -3,7 +3,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const Promise = require('promise');
 
-const firebaseInit = require('./firebase.init');
+require('./firebase.init');
+
 const {mergeHandler} = require("./handlers/merge");
 const {doneHandler} = require("./handlers/done");
 const {statusHandler} = require("./handlers/status");
