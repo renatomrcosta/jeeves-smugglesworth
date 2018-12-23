@@ -10,13 +10,23 @@ const kickHandler = (payload) => {
         if(channelSnapshot.empty){
             messageService.sendMessage(payload.event.channel, messageList.queueIsEmpty);
         } else {
-            const doc = channelSnapshot.docs[0];
+            const doc = channelSnapshot.docs.shift();
             messageService.sendMessage(channel_id,
                 messageList.kickedFromQueue.replace('%s', messageService.mentionSlackUser(user_id)));
             queueService.deleteQueue(doc);
+
+            callNextUserInQueue(channel_id, channelSnapshot.docs);
         }
     });
 };
+
+const callNextUserInQueue = (channel_id, documents) => {
+    if(documents.length > 0){
+        messageService.sendMessage(channel_id,
+            messageList.nextTurn.replace('%s', messageService.mentionSlackUser(documents[0].get('user_id'))));
+    }
+};
+
 module.exports = {
     kickHandler: kickHandler
 };
