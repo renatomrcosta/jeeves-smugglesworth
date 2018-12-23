@@ -2,7 +2,6 @@ import express from "express";
 import bodyParser from "body-parser";
 
 import mergeFunction from "./handlers/merge";
-import sendSlackMessage from "./services/messages.service";
 
 const app = express();
 const port = process.env.PORT || 4521;
