@@ -10,6 +10,11 @@ const sendSlackMessage = (channel_id, message_text) => {
     });
 };
 
+const sendSlackMessageByObject = (channel_id, messageObject) => {
+    messageObject.channel = channel_id;
+    web.chat.postMessage(messageObject);
+};
+
 const mentionSlackUser = (user_id) => {
     return '<@' + user_id + '>';
 };
@@ -17,6 +22,7 @@ const mentionSlackUser = (user_id) => {
 module.exports = {
     messageService: {
         sendMessage: sendSlackMessage,
+        sendSlackMessageByObject: sendSlackMessageByObject,
         mentionSlackUser: mentionSlackUser
     }
 };
