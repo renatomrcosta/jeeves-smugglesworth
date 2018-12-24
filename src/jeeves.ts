@@ -14,7 +14,7 @@ const app = express();
 app.use(bodyParser.json()); // for parsing application/json
 
 app.route('/')
-    .get((req, res) => {res.status(200).send("Hello there!");
+    .get((req, res) => {res.status(200).send("Hello there!")});
 
 //Registers a global route that will be exposed in Cloud Functions
 app.route('/jeeves')
