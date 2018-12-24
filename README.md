@@ -16,9 +16,7 @@ In slack, you can mention the Bot User @Jeeves with any of the following command
 
 #### How to Deploy
 
-Run the following command to deploy jeeves to firebase:
-
-`npm run deploy`
+Under construction
 
 #### How to execute (locally):
 
