@@ -1,3 +1,7 @@
+if(process.env.NODE_ENV !== 'production'){
+    require('dotenv').config();
+}
+
 const functions = require("firebase-functions");
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -49,7 +53,7 @@ app.route('/jeeves')
                 reject();
             }
         }).then((eventType) => {
-            console.log("Evebt Complete: ", eventType);
+            console.log("Event Complete: ", eventType);
         });
     });
 
