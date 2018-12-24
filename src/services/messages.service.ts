@@ -1,6 +1,5 @@
 const {WebClient} = require("@slack/client");
-
-const token = process.env.SLACK_TOKEN || require('../slack.json').api_token;
+const token = process.env.SLACK_TOKEN;
 const web = new WebClient(token);
 
 //Service to handle senting messages to the users in slack;

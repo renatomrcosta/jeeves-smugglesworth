@@ -1,3 +1,7 @@
+if(process.env.NODE_ENV !== 'production'){
+    require('dotenv').config();
+}
+
 const functions = require("firebase-functions");
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -14,7 +18,7 @@ const app = express();
 app.use(bodyParser.json()); // for parsing application/json
 
 //Registers a global route that will be exposed in Cloud Functions
-app.route('*')
+app.route('/jeeves')
     .post((req, res) => {
         const payload = req.body;
         const challenge = payload.challenge;
@@ -49,10 +53,9 @@ app.route('*')
                 reject();
             }
         }).then((eventType) => {
-            console.log("Evebt Complete: ", eventType);
+            console.log("Event Complete: ", eventType);
         });
     });
-
 
 //This is where the export to Cloud functions happens. Also packages the app variable to be started by jeeves.local.ts
 const api = functions.https.onRequest(app);

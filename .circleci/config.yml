@@ -37,4 +37,13 @@ jobs:
 
       # run tests!
       #- run: yarn test
+      #Install firebase dependencies
+      - run:
+          name: firebase-dependencies
+          command: sudo npm install -g firebase-tools
+
+      #Deploy firebase app.
+      - run:
+          name: Deploy
+          command: firebase deploy --token=$FIREBASE_API_TOKEN --non-interactive
 
