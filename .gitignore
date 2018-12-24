@@ -10,3 +10,10 @@ node_modules/
 
 # Intellij Project
 .idea/
+
+#Elastic Beanstalk files
+.elasticbeanstalk/
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
