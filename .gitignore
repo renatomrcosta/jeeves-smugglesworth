@@ -11,3 +11,5 @@ node_modules/
 # Intellij Project
 .idea/
 
+# Env files
+*.env
