@@ -13,8 +13,11 @@ const {helpHandler} = require("./handlers/help");
 const app = express();
 app.use(bodyParser.json()); // for parsing application/json
 
+app.route('/')
+    .get((req, res) => {res.status(200).send("Hello there!");
+
 //Registers a global route that will be exposed in Cloud Functions
-app.route('*')
+app.route('/jeeves')
     .post((req, res) => {
         const payload = req.body;
         const challenge = payload.challenge;
@@ -53,11 +56,14 @@ app.route('*')
         });
     });
 
+const port = process.env.PORT || 4521;
+app.listen(port, () => console.log(`Jeeves app Live on port ${port}!`));
 
-//This is where the export to Cloud functions happens. Also packages the app variable to be started by jeeves.local.ts
-const api = functions.https.onRequest(app);
 
-module.exports = {
-  app: app,
-  jeeves: api
-};
+// //This is where the export to Cloud functions happens. Also packages the app variable to be started by jeeves.local.ts
+// const api = functions.https.onRequest(app);
+//
+// module.exports = {
+//   app: app,
+//   jeeves: api
+// };
