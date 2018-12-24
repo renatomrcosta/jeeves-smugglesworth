@@ -19,10 +19,15 @@ const getQueueByChannelId = (channel_id) => {
         .get();
 };
 
+const updateQueue = (doc) => {
+    return doc.ref.update({
+        merged: true,
+        dequeue_timestamp: new Date()
+    });
+};
+
 const deleteQueue = (doc) => {
-    firestore.collection('queues')
-        .doc(doc.ref)
-        .delete();
+    return doc.ref.delete();
 };
 
 //Exports a 'service'-like object.
@@ -30,6 +35,7 @@ module.exports = {
     queueService: {
         addToQueue: addToQueue,
         deleteQueue: deleteQueue,
+        updateQueue: updateQueue,
         getQueueByChannelId: getQueueByChannelId
     }
 };
