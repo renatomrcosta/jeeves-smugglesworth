@@ -17,7 +17,7 @@
     "attachments": [
       {
         "mrkdwn_in": ["text", "pretext"],
-        "fallback": "Your friendly Merge flow butler! Jeeves will watch your channels and keep track of your merging procedure, now in nodeJS!",
+        "fallback": "Your friendly Merge flow butler! Jeeves will watch your slack channels and keep track of your merging procedure, now in nodeJS!",
         "color": "#36a64f",
         "title": "Jeeves Smugglesworth",
         "pretext": "Your friendly Merge flow butler!\nJeeves will watch your channels and keep track of your merging procedure",
