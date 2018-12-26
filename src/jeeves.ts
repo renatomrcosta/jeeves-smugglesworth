@@ -8,10 +8,10 @@ const Promise = require('promise');
 
 require('./firebase.init.ts');
 
-const {mergeHandler} = require("./handlers/merge");
-const {doneHandler} = require("./handlers/done");
-const {statusHandler} = require("./handlers/status");
-const {helpHandler} = require("./handlers/help");
+const {mergeHandler} = require("./handlers/merge.ts");
+const {doneHandler} = require("./handlers/done.ts");
+const {statusHandler} = require("./handlers/status.ts");
+const {helpHandler} = require("./handlers/help.ts");
 
 
 const port = process.env.PORT || 4521;

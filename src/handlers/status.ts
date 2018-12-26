@@ -1,5 +1,5 @@
-const {messageService} = require("../services/messages.service");
-const {queueService} = require('../services/queue.service');
+const {messageService} = require("../services/messages.service.ts");
+const {queueService} = require('../services/queue.service.ts');
 const messageList = require('../messages.json');
 
 const buildStatusMessage = (docSnapshot) => {

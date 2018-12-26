@@ -1,4 +1,4 @@
-const {messageService} = require("../services/messages.service");
+const {messageService} = require("../services/messages.service.ts");
 const messageList = require('../messages.json');
 
 const helpHandler = (payload) => {
