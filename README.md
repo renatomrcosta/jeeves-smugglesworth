@@ -16,9 +16,7 @@ In slack, you can mention the Bot User @Jeeves with any of the following command
 
 #### How to Deploy
 
-Run the following command to deploy jeeves to firebase:
-
-`npm run deploy`
+Under construction
 
 #### How to execute (locally):
 
@@ -28,7 +26,7 @@ As always, first NPM install:
 
 Secondly, run the jeeves.ts file:
 
-`npm src/jeeves.local.ts`
+`npm src/jeeves.ts`
 
 Have ngrok installed (https://ngrok.com/) and open your local port to the web:
 

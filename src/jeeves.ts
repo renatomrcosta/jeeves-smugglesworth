@@ -2,22 +2,27 @@ if(process.env.NODE_ENV !== 'production'){
     require('dotenv').config();
 }
 
-const functions = require("firebase-functions");
 const express = require("express");
 const bodyParser = require("body-parser");
 const Promise = require('promise');
 
-require('./firebase.init');
+require('./firebase.init.ts');
 
 const {mergeHandler} = require("./handlers/merge");
 const {doneHandler} = require("./handlers/done");
 const {statusHandler} = require("./handlers/status");
 const {helpHandler} = require("./handlers/help");
 
+
+const port = process.env.PORT || 4521;
+const host = process.env.HOST || '0.0.0.0';
+
 const app = express();
 app.use(bodyParser.json()); // for parsing application/json
 
-//Registers a global route that will be exposed in Cloud Functions
+app.route('/')
+    .get((req, res) => {res.status(200).send("Hello there!")});
+
 app.route('/jeeves')
     .post((req, res) => {
         const payload = req.body;
@@ -57,10 +62,4 @@ app.route('/jeeves')
         });
     });
 
-//This is where the export to Cloud functions happens. Also packages the app variable to be started by jeeves.local.ts
-const api = functions.https.onRequest(app);
-
-module.exports = {
-  app: app,
-  jeeves: api
-};
+app.listen(port, host, () => console.log(`Jeeves app Live on port ${port}!`));
