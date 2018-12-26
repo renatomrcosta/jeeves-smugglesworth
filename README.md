@@ -56,15 +56,10 @@ Example: https://071e360d.ngrok.io/jeeves
 
 Save your changes and jeeves should be working.
 
-##Donations
+####Donations
 
 This has been a work of passion from the start. More than a simple slack butler or a funny joke, we have always considered the wellbeing and comfort of our fellow coworkers and coders out there. That is what drives us to spend time away from our families to deliver these products and solutions, flawed as they may be.
 
 If you have in your heart, consider donating a couple of bucks for a good cup of coffee or for a nice beer. We'd really appreciate it!
 
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_s-xclick" />
-<input type="hidden" name="hosted_button_id" value="22GZLFDR7W832" />
-<input type="image" src="https://www.paypalobjects.com/en_US/BE/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-<img alt="" border="0" src="https://www.paypal.com/en_BE/i/scr/pixel.gif" width="1" height="1" />
-</form>
+[![](https://www.paypalobjects.com/en_US/BE/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=22GZLFDR7W832)
