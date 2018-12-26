@@ -16,7 +16,7 @@ const sendSlackMessageByObject = (channel_id, messageObject) => {
 };
 
 const mentionSlackUser = (user_id) => {
-    return '<@' + user_id + '>';
+    return `<@${user_id}>`;
 };
 
 //Exports a 'service'-like object
