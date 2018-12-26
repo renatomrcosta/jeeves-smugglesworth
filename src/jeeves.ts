@@ -6,7 +6,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const Promise = require('promise');
 
-require('./firebase.init');
+require('./firebase.init.ts');
 
 const {mergeHandler} = require("./handlers/merge");
 const {doneHandler} = require("./handlers/done");
