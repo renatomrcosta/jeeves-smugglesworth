@@ -4,7 +4,7 @@ const web = new WebClient(token);
 
 //Service to handle senting messages to the users in slack;
 const sendSlackMessage = (channel_id, message_text) => {
-    web.chat.postMessage({
+    return web.chat.postMessage({
         channel: channel_id,
         text: message_text
     });
@@ -12,11 +12,11 @@ const sendSlackMessage = (channel_id, message_text) => {
 
 const sendSlackMessageByObject = (channel_id, messageObject) => {
     messageObject.channel = channel_id;
-    web.chat.postMessage(messageObject);
+    return web.chat.postMessage(messageObject);
 };
 
 const mentionSlackUser = (user_id) => {
-    return '<@' + user_id + '>';
+    return `<@${user_id}>`;
 };
 
 //Exports a 'service'-like object
