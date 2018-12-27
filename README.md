@@ -35,6 +35,7 @@ This file will contain the environment variables for this application. They shou
 
 - `PORT=`
 - `SLACK_TOKEN=`
+- `FIREBASE=true`
 - `FIREBASE_PROJECT_ID=`
 - `FIREBASE_CLIENT_EMAIL=`
 - `FIREBASE_PRIVATE_KEY=`

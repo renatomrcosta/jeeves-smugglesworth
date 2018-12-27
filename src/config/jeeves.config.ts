@@ -4,6 +4,10 @@ const config = () => {
         require('dotenv').config();
     }
 
+    //Configures Firebase for storing the queue
+    if(process.env.FIREBASE){
+        require('firebase.config.ts')();
+    }
 };
 
 

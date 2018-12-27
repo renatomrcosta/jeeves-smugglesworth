@@ -6,9 +6,12 @@ const serviceAccount = {
     privateKey: process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, '\n') // Used to avoid parsing errors
 };
 
-//On startup, initializes the firebase config for the app
-admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount),
-    databaseURL: "https://jeeves-smugglesworth.firebaseio.com",
-    timestampsInSnapshots: true
-});
+const initFirebase = () => {
+    //On startup, initializes the firebase config for the app
+    admin.initializeApp({
+        credential: admin.credential.cert(serviceAccount),
+        databaseURL: "https://jeeves-smugglesworth.firebaseio.com"
+    });
+};
+
+module.exports = initFirebase;
