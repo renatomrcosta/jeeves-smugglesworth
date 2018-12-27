@@ -10,7 +10,6 @@ const {doneHandler} = require("./handlers/done.ts");
 const {statusHandler} = require("./handlers/status.ts");
 const {helpHandler} = require("./handlers/help.ts");
 
-
 const port = process.env.PORT || 4521;
 const host = process.env.HOST || '0.0.0.0';
 
@@ -59,4 +58,4 @@ app.route('/jeeves')
         });
     });
 
-app.listen(port, host, () => console.log(`Jeeves app Live on port ${port}!`));
+app.listen(port, host, () => console.log(`Jeeves app Live on host ${host} on port ${port}!`));
