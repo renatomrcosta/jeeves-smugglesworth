@@ -1,12 +1,9 @@
-if(process.env.NODE_ENV !== 'production'){
-    require('dotenv').config();
-}
+const config = require('./config/jeeves.config.ts')();
 
 const express = require("express");
 const bodyParser = require("body-parser");
 const Promise = require('promise');
 
-require('./firebase.init.ts');
 
 const {mergeHandler} = require("./handlers/merge.ts");
 const {doneHandler} = require("./handlers/done.ts");
