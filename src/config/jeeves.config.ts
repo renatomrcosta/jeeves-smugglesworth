@@ -6,7 +6,7 @@ const config = () => {
 
     //Configures Firebase for storing the queue
     if(process.env.FIREBASE){
-        require('firebase.config.ts')();
+        require('./firebase.config.ts')();
     }
 
     //If deployed in heroku, and configured to, trigger a keep alive.
