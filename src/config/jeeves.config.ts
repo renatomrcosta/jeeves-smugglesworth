@@ -10,7 +10,7 @@ const config = () => {
     }
 
     //If deployed in heroku, and configured to, trigger a keep alive.
-    if(process.env.HEROKU_KEEP_ALIVE){
+    if(process.env.HEROKU_KEEP_ALIVE_URL){
         require('./heroku.config.ts')();
     }
 };
