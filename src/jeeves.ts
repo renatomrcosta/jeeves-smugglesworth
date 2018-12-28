@@ -1,18 +1,14 @@
-if(process.env.NODE_ENV !== 'production'){
-    require('dotenv').config();
-}
+const config = require('./config/jeeves.config.ts')();
 
 const express = require("express");
 const bodyParser = require("body-parser");
 const Promise = require('promise');
 
-require('./firebase.init.ts');
 
 const {mergeHandler} = require("./handlers/merge.ts");
 const {doneHandler} = require("./handlers/done.ts");
 const {statusHandler} = require("./handlers/status.ts");
 const {helpHandler} = require("./handlers/help.ts");
-
 
 const port = process.env.PORT || 4521;
 const host = process.env.HOST || '0.0.0.0';
@@ -62,4 +58,4 @@ app.route('/jeeves')
         });
     });
 
-app.listen(port, host, () => console.log(`Jeeves app Live on port ${port}!`));
+app.listen(port, host, () => console.log(`Jeeves app Live on host ${host} on port ${port}!`));
