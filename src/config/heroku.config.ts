@@ -1,14 +1,17 @@
-const http = require('http');
+const https = require('https');
 
-const port = process.env.PORT || 4521;
-const host = process.env.HOST || '0.0.0.0';
+const url = process.env.ENVIRONMENT_URL;
 
 const KEEP_ALIVE_TIMER = 600000;
 
 const keepHerokuAlive = () => {
-    setInterval(() => {
-        http.get(`${host}:${port}`).then((response)=> console.log("Keep Alive triggered at", new Date(), response));
-    }, KEEP_ALIVE_TIMER);
+    if(url){
+        setInterval(() => {
+            https.get(url,(response) => {
+                console.log(`Keep Alive on ${url} triggered at`, new Date(), "Status code: " ,response.statusCode);
+            });
+        }, KEEP_ALIVE_TIMER);
+    }
 };
 
 module.exports = keepHerokuAlive;
