@@ -5,7 +5,8 @@ const messageList = require('../messages.json');
 const buildStatusMessage = (docSnapshot) => {
     let statusMessage = messageList.showQueue;
     docSnapshot.forEach((document) => {
-        statusMessage += messageService.mentionSlackUser(document.get('user_id')) + '\n';
+        statusMessage += messageService.mentionSlackUser(document.get('user_id')) +
+            '\n' + messageService.printRelativeTime(document.get('queue_timestamp'));
     });
 
     return statusMessage;

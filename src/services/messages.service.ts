@@ -1,4 +1,5 @@
 const {WebClient} = require("@slack/client");
+const moment = require('moment');
 const token = process.env.SLACK_TOKEN;
 const web = new WebClient(token);
 
@@ -19,10 +20,15 @@ const mentionSlackUser = (user_id) => {
     return `<@${user_id}>`;
 };
 
+const printRelativeTime = (timestamp) => {
+  return moment( timestamp.toDate()).fromNow();
+};
+
 //Exports a 'service'-like object
 module.exports = {
     messageService: {
         sendMessage: sendSlackMessage,
+        printRelativeTime: printRelativeTime,
         sendSlackMessageByObject: sendSlackMessageByObject,
         mentionSlackUser: mentionSlackUser
     }
