@@ -26,6 +26,8 @@
     "express": "^4.16.4",
     "firebase": "^5.5.5",
     "firebase-admin": "^6.0.0",
+    "moment": "^2.23.0",
+    "momentjs": "^2.0.0",
     "promise": "^8.0.2"
   },
   "devDependencies": {
