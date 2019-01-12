@@ -1,4 +1,5 @@
 const config = require('./config/jeeves.config.ts')();
+const log = require('debug')('app:log');
 
 const express = require("express");
 const Promise = require('promise');
@@ -17,6 +18,7 @@ app.use(express.json()); // for parsing application/json
 app.use(express.static(`${__dirname}/landing-page/public`));
 
 app.route('/').get((req, res) => {
+    log('hello');
     res.status(200).sendFile(`${__dirname}/landing-page/index.html`)
 });
 
@@ -55,8 +57,8 @@ app.route('/jeeves')
                 reject();
             }
         }).then((eventType) => {
-            console.log("Event Complete: ", eventType);
+            log("Event Complete: ", eventType);
         });
     });
 
-app.listen(port, host, () => console.log(`Jeeves app Live on host ${host} on port ${port}!`));
+app.listen(port, host, () => log(`Jeeves app Live on host ${host} on port ${port}!`));
