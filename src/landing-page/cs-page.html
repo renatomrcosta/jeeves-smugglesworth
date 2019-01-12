@@ -1,0 +1,1398 @@
+<!doctype html>
+<!--Conditionals for IE9 Support-->
+<!--[if IE 9]><html lang="en" class="ie ie9"><![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ultima - Components and Styles Page v2.0</title>
+    <meta name="description" content="Ultimate Responsive HTML5 Landing Page, Components and Styles" />
+		<meta name="keywords" content="responsive html5 template, landing page, bootstrap 3.0, css, jquery" />
+		<meta name="author" content="8Guild" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <!--Favicon-->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!--Google Fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300' rel='stylesheet' type='text/css'>
+    <!--Bootstrap 3.3.2-->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <!--Icon Fonts-->
+    <link href="css/font-awesome.min.css" rel="stylesheet" media="screen">
+    <link href="css/icon-moon.css" rel="stylesheet" media="screen">
+    <!--Animations-->
+    <link href="css/animate.css" rel="stylesheet" media="screen">
+    <!--Theme Styles-->
+    <link href="css/theme-styles.css" rel="stylesheet" media="screen">
+    <!--Color Schemes-->
+    <link class="color-scheme" href="css/colors/color-default.css" rel="stylesheet" media="screen">
+    <!--Modernizr-->
+		<script src="js/libs/modernizr.custom.js"></script>
+    <!--Adding Media Queries Support for IE8-->
+    <!--[if lt IE 9]>
+      <script src="js/plugins/respond.min.js"></script>
+      <script src="js/plugins/excanvas.js"></script>
+    <![endif]-->
+    <!--Google Analytics-->
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-46803427-2']);
+              _gaq.push(['_trackPageview']);
+      (function () {
+          var ga = document.createElement('script');
+          ga.type = 'text/javascript';
+          ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+      
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    
+    <!--Facebook Remarketing (Placed in <head>))-->
+    <script>(function() {
+      var _fbq = window._fbq || (window._fbq = []);
+      if (!_fbq.loaded) {
+        var fbds = document.createElement('script');
+        fbds.async = true;
+        fbds.src = '//connect.facebook.net/en_US/fbds.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(fbds, s);
+        _fbq.loaded = true;
+      }
+      _fbq.push(['addPixelId', '1491098954441261']);
+    })();
+    window._fbq = window._fbq || [];
+    window._fbq.push(['track', 'PixelInitialized', {}]);
+    </script>
+    <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=1491098954441261&amp;ev=NoScript" /></noscript>
+        
+  </head>
+
+  <!--Body-->
+  <body>
+  
+  	<!--Color Switcher-->
+    <div class="color-switcher group animated">
+    	<div class="toggle"><i class="icon-paint-format"></i></div>
+    	<div class="color">
+      	<a class="current" style="background-color:#ff6f69;" href="#" data-color="default"></a>
+        <span>#ff6f69</span>
+      </div>
+    	<div class="color">
+      	<a style="background-color:#757994;" href="#" data-color="757994"></a>
+        <span>#757994</span>
+      </div>
+    	<div class="color">
+      	<a style="background-color:#e86e54;" href="#" data-color="e86e54"></a>
+        <span>#e86e54</span>
+      </div>
+    	<div class="color">
+      	<a style="background-color:#4dbc84;" href="#" data-color="4dbc84"></a>
+        <span>#4dbc84</span>
+      </div>
+    	<div class="color">
+      	<a style="background-color:#e8548f;" href="#" data-color="e8548f"></a>
+        <span>#e8548f</span>
+      </div>
+    	<div class="color">
+      	<a style="background-color:#575f94;" href="#" data-color="575f94"></a>
+        <span>#575f94</span>
+      </div>
+    	<div class="color">
+      	<a style="background-color:#499ed7;" href="#" data-color="499ed7"></a>
+        <span>#499ed7</span>
+      </div>
+    	<div class="color">
+      	<a style="background-color:#838dcf;" href="#" data-color="838dcf"></a>
+        <span>#838dcf</span>
+      </div>
+    </div>
+    
+  	<!--Navigation-->
+    <nav class="side-navi animated slideInRight">
+    	<ul>
+      	<li class="current"><a class="tooltipped scroll" href="#typography" data-toggle="tooltip" data-placement="left" title="Typography"></a></li>
+        <li><a class="tooltipped scroll" href="#components" data-toggle="tooltip" data-placement="left" title="Components"></a></li>
+      	<li><a class="tooltipped scroll" href="#tables" data-toggle="tooltip" data-placement="left" title="Tables"></a></li>
+        <li><a class="tooltipped scroll" href="#forms" data-toggle="tooltip" data-placement="left" title="Forms"></a></li>
+        <li><a class="tooltipped scroll" href="#buttons" data-toggle="tooltip" data-placement="left" title="Buttons"></a></li>
+      	<li><a class="tooltipped scroll" href="#images" data-toggle="tooltip" data-placement="left" title="Images"></a></li>
+        <li><a class="tooltipped scroll" href="#icons" data-toggle="tooltip" data-placement="left" title="Icons"></a></li>
+      	<li><a class="tooltipped scroll" href="#tabs" data-toggle="tooltip" data-placement="left" title="Tabs"></a></li>
+        <li><a class="tooltipped scroll" href="#accordion" data-toggle="tooltip" data-placement="left" title="Accordion"></a></li>
+        <li><a class="tooltipped scroll" href="#charts" data-toggle="tooltip" data-placement="left" title="Charts"></a></li>
+        <li><a class="tooltipped scroll" href="#wizard" data-toggle="tooltip" data-placement="left" title="Wizard"></a></li>
+        <li><a class="tooltipped scroll" href="#carousel" data-toggle="tooltip" data-placement="left" title="Carousel"></a></li>
+        <li><a class="tooltipped scroll" href="#gallery" data-toggle="tooltip" data-placement="left" title="Gallery"></a></li>
+        <li><a class="tooltipped scroll" href="#modals" data-toggle="tooltip" data-placement="left" title="Modals"></a></li>
+        <li><a class="tooltipped scroll" href="#tooltips" data-toggle="tooltip" data-placement="left" title="Tooltips"></a></li>
+        <li><a class="tooltipped scroll" href="#countdown" data-toggle="tooltip" data-placement="left" title="Countdown"></a></li>
+        <li><a class="tooltipped scroll" href="#plans" data-toggle="tooltip" data-placement="left" title="Plans"></a></li>
+      </ul>
+    </nav>
+    
+    <!--Modal Demos-->
+    <!--Dark Skin Modal-->
+    <div class="dark-skin modal fade" id="modalDark" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Modal Title</h4>
+          </div>
+          <div class="modal-body">
+            <p>Modal body. Put here anything you need: texts, images, forms, etc...</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="icon-close"></i>Close</button>
+            <button type="button" class="btn btn-success"><i class="icon-checkmark"></i>Save changes</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    
+    <!--Light Skin Modal-->
+    <div class="light-skin modal fade" id="modalLight" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Modal Title</h4>
+          </div>
+          <div class="modal-body">
+            <p>Modal body. Put here anything you need: texts, images, forms, etc...</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="icon-close"></i>Close</button>
+            <button type="button" class="btn btn-success"><i class="icon-checkmark"></i>Save changes</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+  
+  	<!--Page Wrapper-->
+  	<div class="cs-page animated fadeIn">
+    
+    	<!--Header-->
+    	<header>
+        <div class="container group">
+          <a class="logo pull-left" href="index.html"><img src="img/logo.png" width="208" height="71" alt="Ultima"/></a>
+          <a class="btn btn-primary pull-right" href="landing1.html"><i class="icon-arrow-left"></i>Back to Landing Page</a>
+        </div>
+      </header>
+      
+      <!--Main Content-->
+      <section class="container cs-demo">
+        <div class="row">
+          <div class="col-lg-12"><h1>Components &amp; Styles</h1></div>
+        </div>
+        
+        <!--Typography-->
+        <div class="row" id="typography">
+          <div class="col-lg-12"><h2 class="cs-heading">Typography</h2></div>
+        </div>
+        <div class="row">
+        	<div class="col-lg-7 col-md-7 col-sm-7">
+          	<h3 class="cs-heading">Headings</h3>
+            <h1>h1.Ultima heading</h1>
+            <span class="devider"></span>
+            <h2>h2.Ultima heading</h2>
+            <span class="devider"></span>
+            <h3>h3.Ultima heading</h3>
+            <span class="devider"></span>
+            <h4>h4.Ultima heading</h4>
+            <span class="devider"></span>
+            <h5>h5.Ultima heading</h5>
+            <span class="devider"></span>
+            <h6>h6.Ultima heading</h6>
+          	<h3 class="cs-heading top-space">Paragraph</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit asperna.</p>
+            <h3 class="cs-heading top-space">Emphasis Classes</h3>
+            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <p class="text-primary">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <p class="text-success">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <p class="text-info">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <p class="text-warning">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <p class="text-danger">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          	<h3 class="cs-heading top-space">Blockquotes</h3>
+            <blockquote>
+            	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante commodo consequat.</p>
+              <footer>Someone famous in Source Title</footer>
+            </blockquote>
+            <blockquote class="blockquote-reverse">
+            	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante commodo consequat.</p>
+              <footer>Someone famous in Source Title</footer>
+            </blockquote>
+          </div>
+        	<div class="col-lg-4 col-md-4 col-sm-4 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
+          	<h3 class="cs-heading">List</h3>
+            <ul>
+            	<li>Lorem ipsum dolor sit amet</li>
+              <li>Consectetur adipiscing elit</li>
+              <li>Integer molestie lorem at massa</li>
+              <li>Facilisis in pretium nisl aliquet</li>
+              <li>Nulla volutpat aliquam velit
+              	<ul>
+                	<li>Phasellus iaculis neque</li>
+                  <li>Purus sodales ultricies</li>
+                  <li>Vestibulum laoreet porttitor</li>
+                  <li>Ac tristique libero volutpat</li>
+                </ul>
+              </li>
+              <li>Faucibus porta lacus fringilla vel</li>
+              <li>Aenean sit amet erat nunc</li>
+              <li>Eget porttitor lorem</li>
+            </ul>
+            <ol>
+              <li>Lorem ipsum dolor sit amet</li>
+              <li>Consectetur adipiscing elit</li>
+              <li>Integer molestie lorem at massa</li>
+              <li>Facilisis in pretium nisl aliquet</li>
+              <li>Nulla volutpat aliquam velit</li>
+              <li>Phasellus iaculis neque</li>
+              <li>Purus sodales ultricies</li>
+              <li>Vestibulum laoreet porttitor</li>
+            </ol>
+            <ul class="list-unstyled">
+            	<li>Lorem ipsum dolor sit amet</li>
+              <li>Consectetur adipiscing elit</li>
+              <li>Integer molestie lorem at massa</li>
+              <li>Facilisis in pretium nisl aliquet</li>
+              <li>Nulla volutpat aliquam velit
+              	<ul>
+                	<li>Phasellus iaculis neque</li>
+                  <li>Purus sodales ultricies</li>
+                  <li>Vestibulum laoreet porttitor</li>
+                  <li>Ac tristique libero volutpat</li>
+                </ul>
+              </li>
+              <li>Faucibus porta lacus fringilla vel</li>
+              <li>Aenean sit amet erat nunc</li>
+              <li>Eget porttitor lorem</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!--Components-->
+        <div class="row" id="components">
+          <div class="col-lg-12"><h2 class="cs-heading">Components</h2></div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <h3 class="cs-heading">Hero Unit (Jumbotron)</h3>
+          	<div class="jumbotron">
+              <h1>Hello, world!</h1>
+              <p>This is a simple hero unit, a simple jumbotron-style component for calling
+extra attention to featured content or information.</p>
+              <p>This component can optionally extend the entire viewport to showcase key content on your site.</p>
+              <p><a class="btn btn-primary btn-lg" href="#" role="button">Push It!</a></p>
+            </div>
+            <h3 class="cs-heading">Page Header</h3>
+            <div class="page-header">
+              <h2>Example page header</h2>
+              <span>Subtext for header</span>
+            </div>
+          </div>
+        </div>
+        
+        <!--Tables-->
+        <div class="row hide-mobile" id="tables">
+          <div class="col-lg-12"><h2 class="cs-heading">Tables</h2></div>
+        </div>
+        <div class="row hide-mobile">
+          <div class="col-lg-12">
+            <h3 class="cs-heading">Basic Example</h3>
+            <table class="table">
+              <tr>
+                <th>#</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Username</th>
+                <th>Email</th>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>James</td>
+                <td>Thompson</td>
+                <td>@james</td>
+                <td>j.thompson@email.com</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>David</td>
+                <td>Evergreen</td>
+                <td>@dave</td>
+                <td>d.evergreen@email.com</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Susanna</td>
+                <td>McClanahan</td>
+                <td>@susy</td>
+                <td>s.mcclanahan@email.com</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Nicolas</td>
+                <td>Oswald</td>
+                <td>@nikki</td>
+                <td>n.oswald@email.com</td>
+              </tr>
+            </table>
+            <h3 class="cs-heading">Striped Rows</h3>
+            <table class="table-striped">
+              <tr>
+                <th>#</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Username</th>
+                <th>Email</th>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>James</td>
+                <td>Thompson</td>
+                <td>@james</td>
+                <td>j.thompson@email.com</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>David</td>
+                <td>Evergreen</td>
+                <td>@dave</td>
+                <td>d.evergreen@email.com</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Susanna</td>
+                <td>McClanahan</td>
+                <td>@susy</td>
+                <td>s.mcclanahan@email.com</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Nicolas</td>
+                <td>Oswald</td>
+                <td>@nikki</td>
+                <td>n.oswald@email.com</td>
+              </tr>
+            </table>
+            <h3 class="cs-heading">Hover Rows</h3>
+            <table class="table-hover">
+              <tr>
+                <th>#</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Username</th>
+                <th>Email</th>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>James</td>
+                <td>Thompson</td>
+                <td>@james</td>
+                <td>j.thompson@email.com</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>David</td>
+                <td>Evergreen</td>
+                <td>@dave</td>
+                <td>d.evergreen@email.com</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Susanna</td>
+                <td>McClanahan</td>
+                <td>@susy</td>
+                <td>s.mcclanahan@email.com</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Nicolas</td>
+                <td>Oswald</td>
+                <td>@nikki</td>
+                <td>n.oswald@email.com</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        
+        <!--Forms-->
+        <div class="row" id="forms">
+          <div class="col-lg-12"><h2 class="cs-heading">Forms</h2></div>
+        </div>
+        <div class="row">
+          <div class="col-lg-5 col-md-5">
+            <h3 class="cs-heading">Basic Example</h3>
+            <form role="form">
+              <div class="form-group">
+                <label for="email1">Email address</label>
+                <input type="email" class="form-control" id="email1" placeholder="Enter email">
+              </div>
+              <div class="form-group">
+                <label for="password1">Password</label>
+                <input type="password" class="form-control" id="password1" placeholder="Password">
+              </div>
+              <div class="form-group">
+                <label for="disabled">Disabled input</label>
+                <input type="text" class="form-control" id="disabled" placeholder="Disabled input..." disabled>
+              </div>
+              <div class="form-group">
+                <label for="FileUpload">File input</label><br/>
+                <div class="fileUpload">
+                  <span>Upload</span>
+                  <input type="file" id="FileUpload" class="upload" />
+                </div>
+                <p class="help-block">Example block-level help text here.</p>
+                <div class="checkbox custom">
+                  <label>
+                    <input type="checkbox">Check me out
+                  </label>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+          <div class="col-lg-6 col-md-6 col-lg-offset-1 col-md-offset-1">
+            <h3 class="cs-heading">Horizontal Form</h3>
+            <form class="form-horizontal" role="form">
+              <div class="form-group">
+                <label for="name1" class="col-sm-2 control-label">Name</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="name1" placeholder="Name">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="email2" class="col-sm-2 control-label">Email</label>
+                <div class="col-sm-10">
+                  <input type="email" class="form-control" id="email2" placeholder="Email">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="email2" class="col-sm-2 control-label">Message</label>
+                <div class="col-sm-10">
+                  <textarea class="form-control" rows="10" placeholder="Message"></textarea>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                  <button type="submit" class="btn btn-primary btn-block">Block Level Submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="row">
+        	<div class="col-lg-12"><h3 class="cs-heading top-space less-space">Inline Form</h3></div>
+        </div>
+        <div class="row">
+        	<div class="col-lg-12">
+          	<form class="form-inline" role="form">
+              <div class="form-group">
+                <label class="sr-only" for="email4">Email address</label>
+                <input type="email" class="form-control" id="email4" placeholder="Enter email">
+              </div>
+              <div class="form-group">
+                <label class="sr-only" for="password4">Password</label>
+                <input type="password" class="form-control" id="password4" placeholder="Password">
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox">Remember me
+                </label>
+              </div>
+              <button type="submit" class="btn btn-primary">Sign in</button>
+            </form>
+          </div>
+        </div>
+        <div class="row">
+        	<div class="col-lg-5 col-md-5 col-sm-6">
+            <h3 class="cs-heading top-space less-space">Checkboxes and Radios</h3>
+          	<div class="row">
+            	<div class="col-lg-6 col-md-6">
+                <div class="checkbox custom">
+                  <label>
+                    <input type="checkbox" value="" checked>
+                    Checkbox 01
+                  </label>
+                </div>
+                <div class="checkbox custom">
+                  <label>
+                    <input type="checkbox" value="">
+                    Checkbox 02
+                  </label>
+                </div>
+                <div class="checkbox custom">
+                  <label>
+                    <input type="checkbox" value="" checked disabled>
+                    Checked Disabled
+                  </label>
+                </div>
+                <div class="checkbox custom">
+                  <label>
+                    <input type="checkbox" value="" disabled>
+                    Unchecked Disabled
+                  </label>
+                </div>
+              </div>
+            	<div class="col-lg-6 col-md-6">
+                <div class="radio custom">
+                  <label>
+                    <input type="radio" name="optionsRadios" id="radio1" value="option1" checked>
+                    Radio 01
+                  </label>
+                </div>
+                <div class="radio custom">
+                  <label>
+                    <input type="radio" name="optionsRadios" id="radio2" value="option2">
+                    Radio 02
+                  </label>
+                </div>
+                <div class="radio custom">
+                  <label>
+                    <input type="radio" name="disabledRadio1" value="" checked disabled>
+                    Checked Disabled
+                  </label>
+                </div>
+                <div class="radio custom">
+                  <label>
+                    <input type="radio" name="disabledRadio2" value="" disabled>
+                    Unchecked Disabled
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-6 col-lg-offset-1 col-md-offset-1">
+          	<h3 class="cs-heading top-space less-space">Input Sizes</h3>
+            <div class="form-group"><input class="form-control input-lg" type="text" placeholder="Large input"></div>
+            <div class="form-group"><input class="form-control" type="text" placeholder="Default input"></div>
+            <div class="form-group"><input class="form-control input-sm" type="text" placeholder="Small input"></div>
+          </div>
+        </div>
+        <div class="row">
+        	<div class="col-lg-6">
+          	<h3 class="cs-heading top-space">Form Validation</h3>
+            <form id="form-validation" role="form">
+              <div class="form-group">
+                <label for="name3">Name (required)</label>
+                <input type="text" class="form-control" id="name3" placeholder="Name (required)" required>
+              </div>
+              <div class="form-group">
+                <label for="email3">Email adress (required)</label>
+                <input type="email" class="form-control" id="email3" placeholder="Email adress (required)" required>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+        
+        <!--Buttons-->
+        <div class="row" id="buttons">
+          <div class="col-lg-12"><h2 class="cs-heading">Buttons</h2></div>
+        </div>
+        <div class="row">
+        	<div class="col-lg-12"><h3 class="cs-heading">Flat Buttons</h3></div>
+        </div>
+        <div class="row buttons-demo">
+        	<div class="col-lg-12">
+            <a href="#" class="btn btn-default">Default Button</a>
+            <a href="#" class="btn btn-primary">Primary Button</a>
+            <a href="#" class="btn btn-success"><i class="icon-checkmark"></i>Approve</a>
+            <a href="#" class="btn btn-danger"><i class="icon-cancel-circle"></i>Dismiss</a>
+            <a href="#" class="btn btn-primary disabled">Disabled Button</a>
+          </div>
+        </div>
+        <div class="row">
+        	<div class="col-lg-12"><h3 class="cs-heading">Flat Buttons Sizes</h3></div>
+        </div>
+        <div class="row buttons-demo">
+        	<div class="col-lg-12">
+            <a href="#" class="btn btn-primary btn-lg">Large Button</a>
+            <a href="#" class="btn btn-primary">Default Button</a>
+            <a href="#" class="btn btn-primary btn-sm">Small Button</a>
+            <a href="#" class="btn btn-primary btn-xs">Extra Small Button</a>
+          </div>
+        </div>
+        <div class="row">
+        	<div class="col-lg-12"><h3 class="cs-heading">3D Buttons</h3></div>
+        </div>
+        <div class="row buttons-demo">
+        	<div class="col-lg-12">
+            <a href="#" class="btn-3d btn-default">Default Button</a>
+            <a href="#" class="btn-3d btn-primary">Primary Button</a>
+            <a href="#" class="btn-3d btn-success"><i class="icon-checkmark"></i>Approve</a>
+            <a href="#" class="btn-3d btn-danger"><i class="icon-cancel-circle"></i>Dismiss</a>
+            <a href="#" class="btn-3d btn-primary disabled">Disabled Button</a>
+          </div>
+        </div>
+        <div class="row">
+        	<div class="col-lg-12"><h3 class="cs-heading">3D Buttons Sizes</h3></div>
+        </div>
+        <div class="row buttons-demo">
+        	<div class="col-lg-12">
+            <a href="#" class="btn-3d btn-default btn-lg">Large Button</a>
+            <a href="#" class="btn-3d btn-default">Default Button</a>
+            <a href="#" class="btn-3d btn-default btn-sm">Small Button</a>
+            <a href="#" class="btn-3d btn-default btn-xs">Extra Small Button</a>
+          </div>
+        </div>
+        <div class="row">
+        	<div class="col-lg-12"><h3 class="cs-heading">Block Level Buttons</h3></div>
+        </div>
+        <div class="row buttons-demo">
+        	<div class="col-lg-3 col-md-3">
+            <a href="#" class="btn btn-default btn-lg btn-block">Default Button</a>
+          </div>
+        	<div class="col-lg-3 col-md-3">
+            <a href="#" class="btn btn-primary btn-lg btn-block">Primary Button</a>
+          </div>
+        	<div class="col-lg-3 col-md-3">
+            <a href="#" class="btn btn-success btn-lg btn-block"><i class="icon-checkmark"></i>Approve</a>
+          </div>
+        	<div class="col-lg-3 col-md-3">
+            <a href="#" class="btn btn-danger btn-lg btn-block"><i class="icon-cancel-circle"></i>Dismiss</a>
+          </div>
+        </div>
+        <div class="row buttons-demo">
+        	<div class="col-lg-3 col-md-3">
+            <a href="#" class="btn-3d btn-default btn-lg btn-block">Default Button</a>
+          </div>
+        	<div class="col-lg-3 col-md-3">
+            <a href="#" class="btn-3d btn-primary btn-lg btn-block">Primary Button</a>
+          </div>
+        	<div class="col-lg-3 col-md-3">
+            <a href="#" class="btn-3d btn-success btn-lg btn-block"><i class="icon-checkmark"></i>Approve</a>
+          </div>
+        	<div class="col-lg-3 col-md-3">
+            <a href="#" class="btn-3d btn-danger btn-lg btn-block"><i class="icon-cancel-circle"></i>Dismiss</a>
+          </div>
+        </div>
+        
+        <!--Images-->
+        <div class="row" id="images">
+          <div class="col-lg-12"><h2 class="cs-heading">Images</h2></div>
+        </div>
+        <div class="row">
+        	<div class="col-lg-3 col-md-3 col-sm-3">
+          	<h3 class="cs-heading text-center">Rounded</h3>
+            <img class="img-rounded img-center" src="img/cs-page/image.png" width="263" height="263" alt="Image Rounded"/>
+          </div>
+        	<div class="col-lg-3 col-md-3 col-sm-3">
+          	<h3 class="cs-heading text-center">Circle</h3>
+            <img class="img-circle img-center" src="img/cs-page/image.png" width="263" height="263" alt="Image Rounded"/>
+          </div>
+        	<div class="col-lg-3 col-md-3 col-sm-3">
+          	<h3 class="cs-heading text-center">Thumbnail</h3>
+            <img class="img-thumbnail img-center" src="img/cs-page/image.png" width="263" height="263" alt="Image Rounded"/>
+          </div>
+        	<div class="col-lg-3 col-md-3 col-sm-3">
+          	<h3 class="cs-heading text-center">Circle Thumbnail</h3>
+            <img class="img-circle-thumbnail img-center" src="img/cs-page/image.png" width="263" height="263" alt="Image Rounded"/>
+          </div>
+        </div>
+        
+        <!--Font Icons-->
+        <div class="row" id="icons">
+          <div class="col-lg-12"><h2 class="cs-heading top-space-extra">Font Icons</h2></div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <h3 class="cs-heading">Icomoon Icons (451)</h3>
+            <div class="icon-set">
+            	<i class="icon-home"></i><i class="icon-office"></i><i class="icon-newspaper"></i><i class="icon-quill"></i><i class="icon-images"></i>
+            	<i class="icon-camera"></i><i class="icon-music"></i><i class="icon-headfones"></i><i class="icon-film"></i><i class="icon-bullhorn"></i>
+            	<i class="icon-connection"></i><i class="icon-book"></i><i class="icon-copy"></i><i class="icon-paste2"></i><i class="icon-folder-open"></i>
+            	<i class="icon-tags"></i><i class="icon-qrcode"></i><i class="icon-cart3"></i><i class="icon-support"></i><i class="icon-phone"></i>
+            	<i class="icon-address-book"></i><i class="icon-envelope"></i><i class="icon-location2"></i><i class="icon-map"></i><i class="icon-alarm2"></i>
+            	<i class="icon-calendar"></i><i class="icon-print"></i><i class="icon-keyboard"></i><i class="icon-download"></i><i class="icon-disk"></i>
+            	<i class="icon-screen"></i><i class="icon-laptop"></i><i class="icon-mobile2"></i><i class="icon-undo2"></i><i class="icon-bubbles2"></i>
+            	<i class="icon-users"></i><i class="icon-user4"></i><i class="icon-search"></i><i class="icon-zoom-in"></i><i class="icon-zoom-out"></i>
+            	<i class="icon-expand"></i><i class="icon-contract"></i><i class="icon-key"></i><i class="icon-lock2"></i><i class="icon-settings"></i>
+            	<i class="icon-stats"></i><i class="icon-lab"></i><i class="icon-remove2"></i><i class="icon-facebook2"></i><i class="icon-twitter2"></i>
+            	<i class="icon-vimeo2"></i><i class="icon-flickr3"></i><i class="icon-picassa"></i>
+            	<i class="icon-deviantart2"></i><i class="icon-tumblr2"></i><i class="icon-pinterest2"></i><span>... and many more</span>
+            </div>
+            <a class="btn btn-primary btn-center" href="cheatsheets/IcoMoon_Cheatsheet.pdf" target="_blank"><i class="fa fa-download"></i>Download PDF Icomoon Cheatsheet</a>
+            <h3 class="cs-heading">Font Awesome Icons (369)</h3>
+            <div class="icon-set">
+            	<i class="fa fa-home"></i><i class="fa fa-briefcase"></i><i class="fa fa-flag"></i><i class="fa fa-user"></i><i class="fa fa-picture-o"></i>
+            	<i class="fa fa-heart"></i><i class="fa fa-music"></i><i class="fa fa-pencil"></i><i class="fa fa-phone"></i><i class="fa fa-desktop"></i>
+            	<i class="fa fa-tablet"></i><i class="fa fa-mobile"></i><i class="fa fa-calendar"></i><i class="fa fa-flask"></i><i class="fa fa-folder-open"></i>
+            	<i class="fa fa-cogs"></i><i class="fa fa-wrench"></i><i class="fa fa-thumbs-up"></i><i class="fa fa-tasks"></i><i class="fa fa-star"></i>
+            	<i class="fa fa-book"></i><i class="fa fa-envelope"></i><i class="fa fa-magic"></i><i class="fa fa-sign-in"></i><i class="fa fa-map-marker"></i>
+            	<i class="fa fa-print"></i><i class="fa fa-filter"></i><i class="fa fa-download"></i><i class="fa fa-eye"></i><i class="fa fa-dot-circle-o"></i>
+            	<i class="fa fa-comments"></i><i class="fa fa-code"></i><i class="fa fa-sitemap"></i><i class="fa fa-external-link"></i><i class="fa fa-gift"></i>
+            	<i class="fa fa-key"></i><i class="fa fa-edit"></i><i class="fa fa-dashboard"></i><i class="fa fa-coffee"></i><i class="fa fa-anchor"></i>
+            	<i class="fa fa-android"></i><i class="fa fa-apple"></i><i class="fa fa-windows"></i><i class="fa fa-shopping-cart"></i><i class="fa fa-cloud-download"></i>
+            	<i class="fa fa-trash-o"></i><i class="fa fa-clipboard"></i><i class="fa fa-facebook"></i><i class="fa fa-twitter"></i><i class="fa fa-google-plus"></i>
+              <i class="fa fa-pinterest"></i><i class="fa fa-youtube"></i><i class="fa fa-linkedin"></i><i class="fa fa-vk"></i><i class="fa fa-github-alt"></i>
+            	<i class="fa fa-dribbble"></i><i class="fa fa-dropbox"></i><i class="fa fa-instagram"></i><i class="fa fa-skype"></i>
+              <span>... and many more</span>
+            </div>
+            <a class="btn btn-primary btn-center" href="cheatsheets/FontAwesome_Cheatsheet.pdf" target="_blank"><i class="fa fa-download"></i>Download PDF Font Awsome Cheatsheet</a>
+          </div>
+        </div>
+        
+        <!--Tabs-->
+        <div class="row" id="tabs">
+          <div class="col-lg-12"><h2 class="cs-heading top-space-extra">Tabs</h2></div>
+        </div>
+        <div class="row">
+          <div class="col-lg-5 col-md-5">
+          	<h3 class="cs-heading">Tabs Horizontal</h3>
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
+              <li><a href="#profile" data-toggle="tab">Profile</a></li>
+              <li><a href="#settings" data-toggle="tab">Messages</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+              <div class="tab-pane fade in active" id="home">
+              	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+              </div>
+              <div class="tab-pane fade" id="profile">
+              	<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+              </div>
+              <div class="tab-pane fade" id="settings">
+              	<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6 col-lg-offset-1 col-md-offset-1 group">
+          	<h3 class="cs-heading">Tabs Vertical</h3>
+              <div class="tabs-vertical group">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs">
+                  <li class="active"><a href="#home2" data-toggle="tab">Home</a></li>
+                  <li><a href="#profile2" data-toggle="tab">Profile</a></li>
+                  <li><a href="#settings2" data-toggle="tab">Messages</a></li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                  <div class="tab-pane fade in active" id="home2">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias.</p>
+                  </div>
+                  <div class="tab-pane fade" id="profile2">
+                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+                  </div>
+                  <div class="tab-pane fade" id="settings2">
+                    <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+        
+        <!--Accordion-->
+        <div class="row" id="accordion">
+          <div class="col-lg-12"><h2 class="cs-heading top-space-extra bottom-space">Accordion</h2></div>
+        </div>
+        <div class="row">
+        	<div class="col-lg-8 col-md-10">
+          	<div class="panel-group" id="accordion-demo">
+              <div class="panel">
+                <a class="panel-heading" data-toggle="collapse" data-parent="#accordion-demo" href="#collapse1">Collapsible Group 01
+                	<div class="indicator"><div class="icon"><span class="hr-line"></span><span class="vr-line"></span></div></div>
+                </a>
+                <div id="collapse1" class="panel-collapse collapse in">
+                  <div class="panel-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                  </div>
+                </div>
+              </div>
+              <div class="panel">
+                <a class="panel-heading collapsed" data-toggle="collapse" data-parent="#accordion-demo" href="#collapse2">Collapsible Group 02
+                	<div class="indicator"><div class="icon"><span class="hr-line"></span><span class="vr-line"></span></div></div>
+                </a>
+                <div id="collapse2" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                  </div>
+                </div>
+              </div>
+              <div class="panel">
+                <a class="panel-heading collapsed" data-toggle="collapse" data-parent="#accordion-demo" href="#collapse3">Collapsible Group 03
+                	<div class="indicator"><div class="icon"><span class="hr-line"></span><span class="vr-line"></span></div></div>
+                </a>
+                <div id="collapse3" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!--Charts-->
+        <div class="row" id="charts">
+          <div class="col-lg-12"><h2 class="cs-heading top-space-extra bottom-space">Animated Charts</h2></div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-6 chart">
+            <h3>Line Chart</h3>
+            <canvas id="lineChart" width="550" height="320"></canvas>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-6 chart">
+            <h3>Bar Chart</h3>
+            <canvas id="barChart" width="550" height="320"></canvas>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-6 chart">
+            <h3>Pie Chart</h3>
+            <div class="group">
+              <div class="pie-chart">
+                <canvas id="pieChart" width="260" height="260"></canvas>
+              </div>
+              <div class="pie-chart-legend animated-legend">
+                <div style="color:#ff6f69;" class="label"><span>20%</span>Item01</div>
+                <div style="color:#e7e7ea;" class="label"><span>25%</span>Item02</div>
+                <div style="color:#313447;" class="label"><span>40%</span>Item01</div>
+                <div style="color:#ffad10;" class="label"><span>15%</span>Item02</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-6 chart">
+            <h3>Doughnut Chart</h3>
+            <div class="group">
+              <div class="pie-chart">
+                <canvas id="doughnutChart" width="260" height="260"></canvas>
+              </div>
+              <div class="pie-chart-legend animated-legend">
+                <div style="color:#ff6f69;" class="label"><span>20%</span>Item01</div>
+                <div style="color:#e7e7ea;" class="label"><span>25%</span>Item02</div>
+                <div style="color:#313447;" class="label"><span>40%</span>Item01</div>
+                <div style="color:#ffad10;" class="label"><span>15%</span>Item02</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!--Application Wizard-->
+        <div class="row" id="wizard">
+          <div class="col-lg-12"><h2 class="cs-heading top-space-extra bottom-space">Application Wizard</h2></div>
+        </div>
+        <div class="row">
+        	<div class="col-lg-12">
+          	<div class="wizard">
+            	<div class="header">
+              	<h3>Application Wizard</h3>
+                <div class="progress-bar group">
+                	<div class="overlay"></div>
+                	<div class="line"></div>
+                	<a class="step-link left current" href="#step01" data-toggle="tab"><span class="status"></span></a>
+                	<a class="step-link middle" href="#step02" data-toggle="tab"><span class="status"></span></a>
+                	<a class="step-link right" href="#step03" data-toggle="tab"><span class="status"></span></a>
+                </div>
+              </div>
+              
+              <form method="post" id="wizard-form" class="wizard-form body" role="form">
+              
+              	<!--Step 1-->
+              	<div class="wizard-step fade in active" id="step01">
+                <div class="tab-links-wrap">
+                	<div class="overlay"></div>
+                  <div class="row tab-links">
+                   <div class="tab-link active col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                      <a href="#contact" data-toggle="tab"><i class="fa fa-user"></i><span>Contact details</span></a>
+                    </div>
+                    <div class="tab-link col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                      <a href="#background" data-toggle="tab"><i class="fa fa-suitcase"></i><span>Background</span></a>
+                    </div>
+                    <div class="tab-link col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                      <a href="#id" data-toggle="tab"><i class="fa fa-check-circle-o"></i><span>ID Proof</span></a>
+                    </div>
+                    <div class="tab-link col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                      <a href="#agreement" data-toggle="tab"><i class="fa fa-file-text"></i><span>Agreement</span></a>
+                    </div>
+                  </div>
+                </div>
+                  <div class="tabs">
+                  	<div class="tab row fade in active" id="contact">
+                      <div class="col-lg-12">
+                        <div class="row">
+                        	<div class="col-lg-6 col-md-6 col-sm-6 form-group">
+                            <label for="name">Name (required)</label>
+                            <input type="text" name="name" class="form-control" id="name" placeholder="Enter your name" required>
+                          </div>
+                        	<div class="col-lg-6 col-md-6 col-sm-6 form-group">
+                            <label for="email">Email (required)</label>
+                            <input type="email" name="email" class="form-control" id="email" placeholder="Enter your email" required>
+                          </div>
+                        </div>
+                        <div class="row">
+                        	<div class="col-lg-6 col-md-6 col-sm-6 form-group">
+                            <label for="adress">Adress</label>
+                            <input type="text" name="adress" class="form-control" id="adress" placeholder="Enter your adress">
+                          </div>
+                        	<div class="col-lg-6 col-md-6 col-sm-6 form-group">
+                            <label for="phone">Phone (required numbers only)</label>
+                            <input type="text" name="phone" class="form-control" id="phone" placeholder="Enter your phone">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  	<div class="tab row fade" id="background">
+                      <div class="col-lg-12">
+                        <div class="row">
+                        	<div class="col-lg-6 col-md-6 col-sm-6 form-group">
+                            <label for="education">Educational background</label>
+                            <textarea class="form-control" name="education" id="education" rows="8" placeholder="Describe your educational background"></textarea>
+                          </div>
+                        	<div class="col-lg-6 col-md-6 col-sm-6 form-group">
+                            <label for="profession">Professional background</label>
+                            <textarea class="form-control" name="profession" id="profession" rows="8" placeholder="Describe your professional background"></textarea>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  	<div class="tab row fade" id="id">
+                      <div class="col-lg-12">
+                        <div class="row">
+                        	<div class="col-lg-6 col-md-6 col-sm-6 form-group">
+                            <label for="security">Social security no (required numbers only)</label>
+                            <input type="text" name="security" class="form-control" id="security" placeholder="Enter social security no" required>
+                          </div>
+                        </div>
+                        <div class="row">
+                        	<div class="col-lg-6 col-md-6 col-sm-6 form-group">
+                            <label for="exp_date">ID expiry date</label>
+                            <input type="text" name="exp_date" class="form-control" id="exp_date" placeholder="Enter ID expiry date">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  	<div class="tab row fade" id="agreement">
+                      <div class="col-lg-12">
+                        <div class="row">
+                        	<div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="form-group">
+                              <label for="agreem">Agreement no</label>
+                              <input type="text" name="agreem" class="form-control" id="agreem" placeholder="Enter agreement no">
+                            </div>
+                            <div class="form-group">
+                              <div class="checkbox custom">
+                                <label>
+                                  <input class="icheckbox" name="terms" type="checkbox">I have read and agree to the terms of service
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-lg-6 col-md-6 col-sm-6 form-group">
+                            <label for="education">Agreement</label>
+                            <textarea class="form-control" name="agr_text" id="agr_text" rows="8" placeholder="Write agreement here"></textarea>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!--Step 2-->
+                <div class="wizard-step fade" id="step02">
+                  <div class="tab-links-wrap">
+                    <div class="overlay"></div>
+                    <div class="row tab-links">
+                      <div class="tab-link active col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <a href="#tab01" data-toggle="tab"><i class="fa fa-anchor"></i>Tab 01</a>
+                      </div>
+                      <div class="tab-link col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <a href="#tab02" data-toggle="tab"><i class="fa fa-anchor"></i>Tab 02</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tabs">
+                  	<div class="tab row fade in active" id="tab01">
+                      <div class="col-lg-12">
+                        <div class="row">
+                          <div class="form-group col-lg-6 col-md-6 col-sm-6">
+                            <label for="field01">Field 01</label>
+                            <input type="text" name="field01" class="form-control" id="field01" placeholder="Placeholder">
+                          </div>
+                          <div class="form-group col-lg-6 col-md-6 col-sm-6">
+                            <label for="field02">Field 02</label>
+                            <input type="text" name="field02" class="form-control" id="field02" placeholder="Placeholder">
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                            <label for="textarea01">Textarea (required)</label>
+                            <textarea class="form-control" name="textarea01" id="textarea01" rows="8" placeholder="Placeholder" required></textarea>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  	<div class="tab row fade" id="tab02">
+                      <div class="col-lg-12">
+                        <div class="row">
+                        	<div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="form-group">
+                              <label for="field03">Field 03</label>
+                              <input type="text" name="field03" class="form-control" id="field03" placeholder="Placeholder">
+                            </div>
+                            <div class="form-group">
+                              <label for="field04">Field 04</label>
+                              <input type="text" name="field04" class="form-control" id="field04" placeholder="Placeholder">
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 form-group">
+                              <label for="textarea02">Textarea</label>
+                              <textarea class="form-control" name="textarea02" id="textarea02" rows="8" placeholder="Placeholder"></textarea>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!--Step 3-->
+                <div class="wizard-step fade" id="step03">
+                  <div class="tab-links-wrap">
+                    <div class="overlay"></div>
+                    <div class="row tab-links">
+                      <div class="tab-link active col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <a href="#tab03" data-toggle="tab"><i class="fa fa-anchor"></i>Tab 03</a>
+                      </div>
+                      <div class="tab-link col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <a href="#tab04" data-toggle="tab"><i class="fa fa-anchor"></i>Tab 04</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tabs">
+                  	<div class="tab row fade in active" id="tab03">
+                      <div class="col-lg-12">
+                        <div class="row">
+                        	<div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="form-group">
+                              <label for="field05">Field 05</label>
+                              <input type="text" name="field05" class="form-control" id="field05" placeholder="Placeholder">
+                            </div>
+                            <div class="form-group">
+                              <label for="field06">Field 06</label>
+                              <input type="text" name="field06" class="form-control" id="field06" placeholder="Placeholder">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  	<div class="tab row fade" id="tab04">
+                      <div class="col-lg-12">
+                        <div class="row">
+                        	<div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="form-group">
+                              <label for="field07">Field 07</label>
+                              <input type="text" name="field07" class="form-control" id="field07" placeholder="Placeholder">
+                            </div>
+                            <div class="form-group">
+                              <label for="field08">Field 08</label>
+                              <input type="text" name="field08" class="form-control" id="field08" placeholder="Placeholder">
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 form-group">
+                              <label for="textarea03">Textarea03</label>
+                              <textarea class="form-control" name="textarea03" id="textarea03" rows="8" placeholder="Placeholder"></textarea>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="wizard-footer group">
+                	<div class="buttons">
+                    <a class="btn btn-primary prev-tab hidden" href="#">Back</a>
+                    <a class="btn btn-primary next-tab" href="#">Continue</a>
+                    <input class="btn btn-primary hidden" type="submit" id="submit-wizard" value="Submit form">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        
+        <!--Carousel-->
+        <div class="row" id="carousel">
+          <div class="col-lg-12"><h2 class="cs-heading bottom-space">Carousel</h2></div>
+        </div>
+        <div id="carousel-example" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#carousel-example" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example" data-slide-to="1"></li>
+            <li data-target="#carousel-example" data-slide-to="2"></li>
+          </ol>
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+            <div class="item active">
+              <img src="img/cs-page/slide1.jpg" width="1140" height="610" alt=""/>
+            </div>
+            <div class="item">
+              <img src="img/cs-page/slide2.jpg" width="1140" height="610" alt=""/>
+            </div>
+            <div class="item">
+              <img src="img/cs-page/slide3.jpg" width="1140" height="610" alt=""/>
+            </div>
+          </div>
+          <!-- Controls -->
+          <a class="left carousel-control" href="#carousel-example" data-slide="prev">
+            <span class="icon-arrow-left2"></span>
+          </a>
+          <a class="right carousel-control" href="#carousel-example" data-slide="next">
+            <span class="icon-arrow-right2"></span>
+          </a>
+        </div>
+        
+        <!--Gallery-->
+        <div class="row" id="gallery">
+          <div class="col-lg-12"><h2 class="cs-heading top-space-extra">Gallery</h2></div>
+        </div>
+				<ul class="gallery">
+					<li>
+						<a href="#" data-largesrc="img/gallery/1.jpg" data-title="City Center" data-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.">
+							<img src="img/gallery/th_1.png" alt="thumb01"/>
+              <span class="img-caption">City Center</span>
+						</a>
+					</li>
+					<li>
+						<a href="#" data-largesrc="img/gallery/2.jpg" data-title="Beach Van" data-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.">
+							<img src="img/gallery/th_2.png" alt="thumb02"/>
+              <span class="img-caption">Beach Van</span>
+						</a>
+					</li>
+					<li>
+						<a href="#" data-largesrc="img/gallery/3.jpg" data-title="Tea Pot" data-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.">
+							<img src="img/gallery/th_3.png" alt="thumb03"/>
+              <span class="img-caption">Tea Pot</span>
+						</a>
+					</li>
+					<li>
+						<a href="#" data-largesrc="img/gallery/4.jpg" data-title="Railway Station" data-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.">
+							<img src="img/gallery/th_4.png" alt="thumb04"/>
+              <span class="img-caption">Railway Station</span>
+						</a>
+					</li>
+					<li>
+						<a href="#" data-largesrc="img/gallery/5.jpg" data-title="City Center" data-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.">
+							<img src="img/gallery/th_5.png" alt="thumb05"/>
+              <span class="img-caption">City Center</span>
+						</a>
+					</li>
+					<li>
+						<a href="#" data-largesrc="img/gallery/6.jpg" data-title="Bicycle Parking" data-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.">
+							<img src="img/gallery/th_6.png" alt="thumb06"/>
+              <span class="img-caption">Bicycle Parking</span>
+						</a>
+					</li>
+					<li>
+						<a href="#" data-largesrc="img/gallery/7.jpg" data-title="London Boat" data-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.">
+							<img src="img/gallery/th_7.png" alt="thumb07"/>
+              <span class="img-caption">London Boat</span>
+						</a>
+					</li>
+					<li>
+						<a href="#" data-largesrc="img/gallery/8.jpg" data-title="Apple Air" data-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.">
+							<img src="img/gallery/th_8.png" alt="thumb08"/>
+              <span class="img-caption">Apple Air</span>
+						</a>
+					</li>
+				</ul>
+        
+        <!--Modals-->
+        <div class="row" id="modals">
+          <div class="col-lg-12"><h2 class="cs-heading">Modals</h2></div>
+        </div>
+        <!--Dark Skin-->
+        <div class="row">
+        	<div class="col-lg-8 col-md-8">
+          	<h3 class="cs-heading bottom-space">Dark Skin</h3>
+            <div class="static-modal dark-skin modal fade in">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Modal Title</h4>
+                  </div>
+                  <div class="modal-body">
+                    <p>Modal body. Put here anything you need: texts, images, forms, etc...</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="icon-close"></i>Close</button>
+                    <button type="button" class="btn btn-success"><i class="icon-checkmark"></i>Save changes</button>
+                  </div>
+                </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+          </div>
+        	<div class="col-lg-4 col-md-4">
+            <h3 class="cs-heading bottom-space">Dark Skin Demo</h3>
+          	<a class="btn btn-primary" href="#" data-toggle="modal" data-target="#modalDark">Launch Modal Demo</a>
+          </div>
+        </div>
+        <!--Light Skin-->
+        <div class="row">
+        	<div class="col-lg-8 col-md-8">
+          	<h3 class="cs-heading top-space bottom-space">Ligh Skin</h3>
+            <div class="static-modal light-skin modal fade in">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Modal Title</h4>
+                  </div>
+                  <div class="modal-body">
+                    <p>Modal body. Put here anything you need: texts, images, forms, etc...</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="icon-close"></i>Close</button>
+                    <button type="button" class="btn btn-success"><i class="icon-checkmark"></i>Save changes</button>
+                  </div>
+                </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+          </div>
+        	<div class="col-lg-4 col-md-4">
+            <h3 class="cs-heading top-space bottom-space">Light Skin Demo</h3>
+          	<a class="btn btn-default" href="#" data-toggle="modal" data-target="#modalLight">Launch Modal Demo</a>
+          </div>
+        </div>
+        
+        <!--Tooltips-->
+        <div class="row" id="tooltips">
+          <div class="col-lg-12"><h2 class="cs-heading bottom-space">Tooltips</h2></div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+          	<a href="#" class="btn btn-default tooltipped" data-toggle="tooltip" data-placement="left" title="Tooltip on Left">Tooltip on Left</a>
+          	<a href="#" class="btn btn-default tooltipped" data-toggle="tooltip" data-placement="top" title="Tooltip on Top">Tooltip on Top</a>
+          	<a href="#" class="btn btn-default tooltipped" data-toggle="tooltip" data-placement="bottom" title="Tooltip on Bottom">Tooltip on Bottom</a>
+          	<a href="#" class="btn btn-default tooltipped" data-toggle="tooltip" data-placement="right" title="Tooltip on Right">Tooltip on Right</a>
+          </div>
+        </div>
+        
+        <!--Countdown-->
+        <div class="row" id="countdown">
+          <div class="col-lg-12"><h2 class="cs-heading">Countdown</h2></div>
+        </div>
+        <div class="row">
+        	<div class="col-lg-12">
+            <div class="countdown"></div>
+          </div>
+        </div>
+        
+        <!--Pricing Plans-->
+        <div class="row" id="plans">
+          <div class="col-lg-12"><h2 class="cs-heading bottom-space">Pricing Plans</h2></div>
+        </div>
+        <div class="row">
+        	<div class="col-lg-4 col-md-4 col-sm-4">
+          	<div class="pricing-plan">
+            	<div class="header">
+              	<h3>Pricing Plan 01</h3>
+                <span class="price">9.99 $</span>
+              </div>
+              <div class="body">
+              	<uL>
+                	<li>Lots of Components</li>
+                  <li>Cool Icons</li>
+                  <li>Unlimited colors</li>
+                </uL>
+                <div class="buy-btn"><a class="btn btn-primary" href="#">Buy</a></div>
+              </div>
+            </div>
+          </div>
+        	<div class="col-lg-4 col-md-4 col-sm-4">
+          	<div class="pricing-plan highlited">
+            	<div class="header">
+              	<h3>Pricing Plan 02</h3>
+                <span class="price">19.99 $</span>
+              </div>
+              <div class="body">
+              	<uL>
+                	<li>Lots of Components</li>
+                  <li>Cool Icons</li>
+                  <li>Unlimited colors</li>
+                </uL>
+                <div class="buy-btn"><a class="btn btn-primary" href="#">Buy</a></div>
+              </div>
+            </div>
+          </div>
+        	<div class="col-lg-4 col-md-4 col-sm-4">
+          	<div class="pricing-plan">
+            	<div class="header">
+              	<h3>Pricing Plan 03</h3>
+                <span class="price">149.99 $</span>
+              </div>
+              <div class="body">
+              	<uL>
+                	<li>Lots of Components</li>
+                  <li>Cool Icons</li>
+                  <li>Unlimited colors</li>
+                </uL>
+                <div class="buy-btn"><a class="btn btn-primary" href="#">Buy</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </section><!--Close Main Content-->
+      
+      <!--Footer-->
+      <footer class="footer">
+        <div class="container group">
+          <a class="logo" href="landing1.html"><img src="img/logo.png" width="208" height="71" alt="Ultima"/></a>
+          <div class="clearfix"></div>
+          <p class="copyright">&copy; 2014 ULTIMA. All Rights Reserved. Designed by <a href="http://8guild.com/" target="_blank">8Guild</a></p>
+        </div>
+      </footer>
+      
+    </div><!--Close Page Wrapper-->
+    
+    <!--Scroll To Top Button-->
+    <div id="scroll-top" class="scroll-up"><i class="icon-arrow-up"></i></div>
+  
+    <!--Javascript (jQuery) Libraries and Plugins-->
+    <script src="js/libs/jquery-1.11.2.min.js"></script>
+		<script src="js/libs/jquery.easing.1.3.js"></script>
+		<script src="js/plugins/bootstrap.min.js"></script>
+		<script src="js/plugins/jquery.touchSwipe.min.js"></script>
+		<script src="js/plugins/jquery.placeholder.js"></script>
+    <script src="js/plugins/icheck.min.js"></script>
+    <script src="js/plugins/jquery.validate.min.js"></script>
+		<script src="js/plugins/gallery.js"></script>
+    <script src="js/plugins/jquery.fitvids.js"></script>
+		<script src="js/plugins/jquery.bxslider.min.js"></script>
+		<script src="js/plugins/chart.js"></script>
+    <script src="js/plugins/jquery.countdown.min.js"></script>
+		<script src="js/plugins/waypoints.min.js"></script>
+    <script src="js/plugins/smoothscroll.js"></script>
+		<script src="js/plugins/color-switcher.js"></script>
+		<script src="js/components-styles.js"></script>
+    
+    <!--Google Remarketing Tag (Placed before </body>)-->
+    <script type="text/javascript">
+    /* <![CDATA[ */
+    var google_conversion_id = 966923546;
+    var google_custom_params = window.google_tag_params;
+    var google_remarketing_only = true;
+    /* ]]> */
+    </script>
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+    </script>
+    <noscript>
+    <div style="display:inline;">
+    <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/966923546/?value=0&amp;guid=ON&amp;script=0"/>
+    </div>
+    </noscript>
+    
+  </body><!--Close Body-->
+</html>

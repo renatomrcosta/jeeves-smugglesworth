@@ -1,0 +1,157 @@
+/*
+ *Ultima Demo Page Style Sheet v2.3
+ *Copyright 2014 8Guild.com
+ */
+
+/* Apply a natural box layout model to all elements */
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+ }
+ 
+/*Clearfix*/
+.group:after {
+	visibility: hidden;
+	display: block;
+	content: "";
+	clear: both;
+	height: 0;
+	}
+*:first-child+html .group { zoom: 1; } /* IE7 */
+.clear {
+	clear: both;
+}
+
+/*Body
+---------------------------------------------------------*/
+body {
+	font-family: 'Roboto', Arial, Helvetica, sans-serif;
+	background-color: #ffffff;
+	font-weight: normal;
+	color: #313447;
+	background-color: #ff6f69;
+	-webkit-font-smoothing: antialiased;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+/*Header
+---------------------------------------------------------*/
+header {
+	width: 100%;
+	background: #fff;
+	position: relative;
+	z-index: 1;
+}
+header .logo {
+	max-width: 205px;
+	height: auto;
+	margin: 12px 0; 
+}
+.stiky-header .logo img {
+	max-width: 100%;
+}
+
+/*Hero
+---------------------------------------------------------*/
+.hero {
+	width: 100%;
+	background: url(../img/bg-art.png) no-repeat center top;
+	padding: 190px 0 0 0;
+	margin-top: -130px;
+	padding-bottom: 40px;
+}
+.mac-left, .mac-right {
+	margin-bottom: 60px;
+}
+
+/*Buttons
+---------------------------------------------------------*/
+.btn-center {
+	display: table !important;
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  border: none;
+	white-space: normal;
+	margin: 0 10px 20px 0;
+  padding: 13px 25px;
+  font-size: 16px;
+  line-height: 1;
+	text-decoration: none !important;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.btn:active,
+.btn.active {
+	outline: none !important;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.25);
+}
+.btn-default, 
+.btn-primary,
+.btn-success,
+.btn-danger {
+	-webkit-transition: background-color 250ms ease;
+	-moz-transition: background-color 250ms ease;
+	transition: background-color 250ms ease;
+}
+.btn-primary {
+  color: #ffffff;
+  background-color: #313447;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+  color: #ffffff;
+  background-color: #464962;
+}
+
+/*Footer
+---------------------------------------------------------*/
+footer {
+	width: 100%;
+	padding: 30px 15px;
+	text-align: center;
+}
+footer p {
+	color: #fff;
+	font-size: 1.1em;
+}
+footer p a {
+	font-weight: bold;
+	color: #fff;
+}
+footer p a:hover {
+	color: #fff;
+}
+
+/*Preloader
+---------------------------------------------------------*/
+#preloader {
+	position: fixed;
+	width: 100%;
+	height: auto;
+	min-height: 100%;
+	top: 0;
+	left: 0;
+	background-color: #ffffff;
+	z-index: 9999;
+}
+#spinner {
+	position: absolute;
+	width: 80px;
+	height: 80px;
+	top: 50%;
+	left: 50%;
+	margin: -40px 0 0 -40px;
+	background: url(../img/spinner.GIF) no-repeat;
+}
