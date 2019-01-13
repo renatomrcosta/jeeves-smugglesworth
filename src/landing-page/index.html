@@ -1,0 +1,248 @@
+<!doctype html>
+<!--Conditionals for IE9 Support-->
+<!--[if IE 9]><html lang="en" class="ie ie9"><![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Jeeves</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <!--Favicon-->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!--Google Fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'>
+    <!--Bootstrap 3.3.2-->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <!--Icon Fonts-->
+    <link href="css/font-awesome.min.css" rel="stylesheet" media="screen">
+    <link href="css/icon-moon.css" rel="stylesheet" media="screen">
+    <!--Animations-->
+    <link href="css/animate.css" rel="stylesheet" media="screen">
+    <!--Theme Styles-->
+    <link href="css/theme-styles.css" rel="stylesheet" media="screen">
+    <!--Color Schemes-->
+    <link class="color-scheme" href="css/colors/color-default.css" rel="stylesheet" media="screen">
+    <!--Modernizr-->
+		<script src="js/libs/modernizr.custom.js"></script>
+    <!--Adding Media Queries and Canvas Support for IE8-->
+    <!--[if lt IE 9]>
+      <script src="js/plugins/respond.min.js"></script>
+      <script src="js/plugins/excanvas.js"></script>
+    <![endif]-->
+
+  </head>
+
+  <!--Body-->
+  <body class="space-top">
+  
+  	<!--Page Preloading-->
+    <div id="preloader"><div id="spinner"></div></div>
+    
+    <!--Header-->
+    <header class="stiky-header">
+    	<div class="container group">
+            <div class="logo" href="#"><h2><b>Jeeves</b></h2></div>
+            <div class="logo-mobile" href="#"><h2><b>Jeeves</b></h2></div>
+        <div class="navi-toggle group">
+          <span class="dot"></span><span class="line"></span>
+          <span class="dot"></span><span class="line"></span>
+          <span class="dot"></span><span class="line"></span>
+          <span class="dot"></span><span class="line"></span>
+        </div>
+        <nav class="main-navi">
+        	<ul>
+          	<li class="active"><a class="scroll-up" href="#">Home</a></li>
+            <li class="has-dropdown"><a class="scroll" href="#features">Features</a></li>
+            <li class="has-dropdown"><a class="scroll" href="#team">Team</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    
+    <!--Hero Unit with Slider-->
+    <section class="hero">
+        <!--Hero Slider-->
+        <div class="row">
+            <div class="slide first-slide">
+              <div class="col-lg-4 col-md-4 col-sm-4 animated">
+                <img src="img/index/main-image.png" alt="Components and Styles"/>
+              </div>
+              <div class="col-lg-8 col-md-8 col-sm-8 animated">
+                <div class="row">
+                    <h2 style="margin-top:50px;" class="text-light text-left"><b>Jeeves, your friendly merge flow butler!</b></h2>
+                    <h3 class="text-light">Jeeves will watch your slack channels and keep track of your merging procedure!!!</h3>
+                </div>
+                <a class="btn btn-primary" href="https://github.com/renatomrcosta/jeeves-smugglesworth">
+                    Find me on GitHub
+                    <i class="icon-github"></i>
+                </a>
+              </div>
+            </div>
+        </div><!--Close Hero Slider-->
+    </section><!--Close Hero-->
+    
+    <!--Features-->
+    <section class="page-block" id="features" style="margin-top: 55px">
+    	<div class="container">
+        <div class="row page-header">
+          <h2>Features</h2>
+          <span>Subtext for header</span>
+        </div>
+        <div class="row features">
+            <div class="col-lg-3 col-md-4 col-sm-4">
+                <div class="feature-img"><img src="img/icons/merge.png" width="124" height="120" alt="Editable colors"/></div>
+                <h3>Merge</h3>
+                <p>Requests Jeeves for a spot in the merging queue.
+                </p>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-4">
+                <div class="feature-img"><img src="img/icons/done.png" width="124" height="120" alt="Editable colors"/></div>
+                <h3>Done</h3>
+                <p>Signals the end of your merge. However, it only works if you are the one in the merge queue at the moment
+                </p>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-4">
+                <div class="feature-img"><img src="img/icons/kick.png" width="124" height="120" alt="Editable colors"/></div>
+                <h3>Kick</h3>
+                <p>Kicks whoever is in the queue at the moment. Good for those pesky git and runners, but use it wisely!
+                </p>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-4">
+                <div class="feature-img"><img src="img/icons/status.png" width="124" height="120" alt="Editable colors"/></div>
+                <h3>Status</h3>
+                <p>Shows the status of the merge queue for the current channel
+                </p>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-4">
+                <div class="feature-img"><img src="img/icons/help.png" width="124" height="120" alt="Editable colors"/></div>
+                <h3>Help</h3>
+                <p>Shows a friendly message!
+                </p>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Testimonials-->
+    <section class="page-block color" id="testimonials">
+      <div class="container">
+        <div class="row page-header" style="margin-top: 5em">
+          <h2 class="text-light">Testimonials</h2>
+        </div>
+        <div class="row">
+          <div id="testimonials-slider" class="testimonials-slider carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#testimonials-slider" data-slide-to="0" class="active"></li>
+              <!--<li data-target="#testimonials-slider" data-slide-to="1"></li>-->
+              <!--<li data-target="#testimonials-slider" data-slide-to="2"></li>-->
+            </ol>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+              <div class="item active">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-4">
+                      <img class="img-circle-thumbnail img-center" src="img/team/@jeeves.jpeg" width="192" height="192" alt="Dexter Dirk"/>
+                    </div>
+                    <div class="col-lg-9 col-md-9 col-sm-8">
+                      <blockquote>
+                        <p class="text-light">I really would like to hear your opinion about me, be the first one!!!</p>
+
+                        <p class="text-light">Send me an email to <a class="text-light" href="mailto:chunfos@gmail.com?Subject=Jeeves%20Testimonial">chunfos@gmail.com</a></p>
+                        <footer class="text-light">Jeeves</footer>
+                      </blockquote>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--Team-->
+    <section class="page-block team" id="team">
+    	<div class="container">
+        <div class="row page-header">
+          <h2>Meet our team</h2>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <img class="img-circle-thumbnail img-center" src="img/team/@erico.jpeg" width="200" alt="Erico"/>
+                <h3>Érico Boskovisch</h3>
+                <p>Developer</p>
+                <div class="social-networks">
+                    <!--<a class="icon-facebook tooltipped" href="#" title="Github"></a>-->
+                    <a class="icon-github tooltipped" href="https://github.com/boskovisch" title="Github"></a>
+                    <!--<a class="icon-instagram tooltipped" href="#" title="Instagram"></a>-->
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <img class="img-circle-thumbnail img-center" src="img/team/@renato.jpeg" width="200" alt="Renato Costa"/>
+                <h3>Renato Costa</h3>
+                <p>Developer</p>
+                <div class="social-networks">
+                    <a class="icon-github tooltipped" href="https://github.com/renatomrcosta" title="Github"></a>
+                    <!--<a class="icon-google-plus tooltipped" href="#" title="Google+"></a>-->
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <img class="img-circle-thumbnail img-center" src="img/team/@ronaldo.jpeg" width="200" alt="Ronaldo Correa"/>
+                <h3>Ronaldo Correa</h3>
+                <p>Developer</p>
+                <div class="social-networks">
+                    <a class="icon-github tooltipped" href="https://github.com/ronaldocorrea" title="Github"></a>
+                    <!--<a class="icon-youtube tooltipped" href="#" title="Youtube"></a>-->
+                    <!--<a class="icon-tumblr tooltipped" href="#" title="Tumblr"></a>-->
+                </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--Donation -->
+    <section class="page-block color" id="pricing">
+        <div class="container">
+            <div class="container">
+                <div class="row page-header" style="margin-top: 5em">
+                    <h2 class="text-light">Donation</h2>
+                </div>
+                <div class="text-light text-center">
+                <h3>This has been a work of passion from the start. More than a simple slack butler or a funny joke, we have always considered the wellbeing and comfort of our fellow coworkers and coders out there.</h3>
+                <br>
+                <h3>That is what drives us to spend time away from our families to deliver these products and solutions, flawed as they may be.</h3>
+                <br>
+                <h3>If you have in your heart, consider donating a couple of bucks for a good cup of coffee or for a nice beer. We'd really appreciate </h3>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 3em">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=22GZLFDR7W832">
+                        <img class="img-center" src="https://www.paypalobjects.com/en_US/BE/i/btn/btn_donateCC_LG.gif">
+                    </a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <!--Scroll To Top Button-->
+    <div id="scroll-top" class="scroll-up"><i class="icon-arrow-up"></i></div>
+    
+    <!--Javascript (jQuery) Libraries and Plugins-->
+    <script src="js/libs/jquery-1.11.2.min.js"></script>
+    <script src="js/libs/jquery.easing.1.3.js"></script>
+    <script src="js/plugins/bootstrap.min.js"></script>
+    <script src="js/plugins/jquery.touchSwipe.min.js"></script>
+    <script src="js/plugins/jquery.placeholder.js"></script>
+    <script src="js/plugins/icheck.min.js"></script>
+    <script src="js/plugins/jquery.validate.min.js"></script>
+    <script src="js/plugins/gallery.js"></script>
+    <script src="js/plugins/jquery.fitvids.js"></script>
+    <script src="js/plugins/jquery.bxslider.min.js"></script>
+    <script src="js/plugins/waypoints.min.js"></script>
+    <script src="js/plugins/smoothscroll.js"></script>
+    <script src="js/plugins/color-switcher.js"></script>
+    <script src="js/landing2.js"></script>
+
+  </body><!--Close Body-->
+</html>
