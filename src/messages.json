@@ -27,7 +27,7 @@
         "mrkdwn_in": ["text", "pretext"],
         "fallback": "Your friendly Merge flow butler! Jeeves will watch your channels and keep track of your merging procedure",
         "color": "#36a64f",
-        "text": "The source code can be found at https://github.com/renatomrcosta/jeeves-smugglesworth\nAll help is welcome!",
+        "text": "Check us out at: https://jeeves-smugglesworth.herokuapp.com/\nThe source code can be found at https://github.com/renatomrcosta/jeeves-smugglesworth\nAll help is welcome!",
         "footer": "Xunfos & Chunfos"
       }
     ]
