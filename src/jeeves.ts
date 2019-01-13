@@ -1,4 +1,6 @@
 const config = require('./config/jeeves.config.ts')();
+const path = require("path");
+
 const log = require('debug')('app:log');
 
 const express = require("express");
@@ -15,11 +17,12 @@ const host = process.env.HOST || '0.0.0.0';
 
 const app = express();
 app.use(express.json()); // for parsing application/json
-app.use(express.static(`../${__dirname}/landing-page/public`));
+app.use(express.static(path.join(__dirname,'..','landing-page/public')));
 
 app.route('/').get((req, res) => {
     log('hello');
-    res.status(200).sendFile(`..*${__dirname}/landing-page/index.html`)
+    log(path.join(__dirname,'..','landing-page/index.html'));
+    res.status(200).sendFile(path.join(__dirname,'..','landing-page/index.html'))
 });
 
 app.route('/jeeves')
