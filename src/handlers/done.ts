@@ -18,9 +18,10 @@ const doneHandler = (payload, event_type) => {
            } else {
                const doc = channelSnapshot.docs.shift();
                const message = (event_type === 'DONE' ? messageList.mergedSuccessfully : messageList.kickedFromQueue);
+               const mentionedUser = (event_type === 'DONE' ? user_id : doc.get('user_id'));
 
                queueService.deleteQueue(doc).then(() => {
-                   messageService.sendMessage(channel_id, message.replace('%s', messageService.mentionSlackUser(user_id))).then(() => {
+                   messageService.sendMessage(channel_id, message.replace('%s', messageService.mentionSlackUser(mentionedUser))).then(() => {
                        callNextUserInQueue(channel_id, channelSnapshot.docs);
                    });
                }).catch((errormsg) => console.error(errormsg));
