@@ -1,41 +1,37 @@
-const admin = require('firebase-admin');
-const firestore = admin.firestore();
-firestore.settings({timestampsInSnapshots: true});
+let dal;
 
+if(process.env.FIREBASE){
+    dal = require('../dal/firebase.dal.ts');
+}
+
+//If data access layer is not truthy, then maybe load up something in memory later. For now, throw a console error.
+if(!dal){
+    console.error("There's no Storage / DB configured");
+}
 //Service that deals with the CRUD of the system: Adding items to the collection, removing them and querying them.
 
 const addToQueue = (channel_id, user_id) => {
-    firestore.collection('queues').add({
-        channel_id: channel_id,
-        user_id: user_id,
-        queue_timestamp: new Date()
-    });
+    return dal.add(channel_id, user_id);
 };
 
 const getQueueByChannelId = (channel_id) => {
-    return firestore.collection('queues')
-        .where('channel_id', '==', channel_id)
-        .orderBy('queue_timestamp', 'asc')
-        .get();
+    return dal.getById(channel_id);
 };
 
 const updateQueue = (doc) => {
-    return doc.ref.update({
-        merged: true,
-        dequeue_timestamp: new Date()
-    });
+    return dal.update(doc);
 };
 
 const deleteQueue = (doc) => {
-    return doc.ref.delete();
+    return dal.remove(doc);
 };
 
 //Exports a 'service'-like object.
 module.exports = {
     queueService: {
-        addToQueue: addToQueue,
-        deleteQueue: deleteQueue,
-        updateQueue: updateQueue,
-        getQueueByChannelId: getQueueByChannelId
+        add: addToQueue,
+        remove: deleteQueue,
+        update: updateQueue,
+        getById: getQueueByChannelId
     }
 };
