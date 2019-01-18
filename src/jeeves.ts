@@ -1,17 +1,11 @@
-const config = require('./config/jeeves.config.ts')();
-const path = require("path");
-
-const log = require('debug')('app:log');
-
 const express = require("express");
-const Promise = require('promise');
+const path = require("path");
+const log = require('debug')('app:log');
 
 const jeevesConfiguration = require('./config/jeeves.config.ts');
 
-const {mergeHandler} = require("./commands/merge.ts");
-const {doneHandler} = require("./commands/done.ts");
-const {statusHandler} = require("./commands/status.ts");
-const {helpHandler} = require("./commands/help.ts");
+const slackEventHandler = require('./handlers/slack_event.ts');
+const landingPageHandler = require('./handlers/landing_page.ts');
 
 const port = process.env.PORT || 4521;
 const host = process.env.HOST || '0.0.0.0';
@@ -23,9 +17,7 @@ app.use(express.json()); // for parsing application/json
 app.use(express.static(path.join(__dirname,'..','landing-page/public')));
 
 app.route('/').get((req, res) => {
-    log('hello');
-    log(path.join(__dirname,'..','landing-page/index.html'));
-    res.status(200).sendFile(path.join(__dirname,'..','landing-page/index.html'))
+    landingPageHandler.handle(res);
 });
 
 app.route('/jeeves')
@@ -39,30 +31,10 @@ app.route('/jeeves')
             challenge: challenge
         });
 
-        //Calling the event as a promise to return asap.
-        new Promise((resolve, reject) => {
-            if(payload.event && payload.event.type === 'app_mention'){
-                //Check which event, in order or importance
-                const request_text = payload.event.text.toUpperCase();
-                if(request_text.includes('MERGE')){
-                    mergeHandler(payload);
-                    resolve("MERGE");
-                } else if(request_text.includes('DONE')){
-                    doneHandler(payload, 'DONE');
-                    resolve("DONE");
-                } else if(request_text.includes('KICK')){
-                    doneHandler(payload, 'KICK');
-                    resolve("KICK");
-                } else if(request_text.includes('STATUS')){
-                    statusHandler(payload);
-                    resolve("STATUS");
-                }  else if(request_text.includes('HELP')) {
-                    helpHandler(payload);
-                    resolve("HELP");
-                }
-                reject();
-            }
-        }).then((eventType) => {
+        //Handle the event in its own component.
+        slackEventHandler
+            .handle(payload)
+            .then((eventType) => {
             log("Event Complete: ", eventType);
         });
     });
