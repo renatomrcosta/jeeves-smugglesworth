@@ -1,8 +1,8 @@
 const Promise = require('promise');
 
 const {mergeHandler} = require("../commands/merge.ts");
-const {doneHandler} = require(".,/commands/done.ts");
-const {statusHandler} = require(",./commands/status.ts");
+const {doneHandler} = require("../commands/done.ts");
+const {statusHandler} = require("../commands/status.ts");
 const {helpHandler} = require("../commands/help.ts");
 
 const handleEvent = (payload) => {
