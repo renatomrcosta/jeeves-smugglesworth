@@ -7,10 +7,10 @@ const express = require("express");
 const Promise = require('promise');
 
 
-const {mergeHandler} = require("./handlers/merge.ts");
-const {doneHandler} = require("./handlers/done.ts");
-const {statusHandler} = require("./handlers/status.ts");
-const {helpHandler} = require("./handlers/help.ts");
+const {mergeHandler} = require("./commands/merge.ts");
+const {doneHandler} = require("./commands/done.ts");
+const {statusHandler} = require("./commands/status.ts");
+const {helpHandler} = require("./commands/help.ts");
 
 const port = process.env.PORT || 4521;
 const host = process.env.HOST || '0.0.0.0';
