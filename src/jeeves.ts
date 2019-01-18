@@ -3,6 +3,7 @@ const path = require("path");
 const log = require('debug')('app:log');
 
 const jeevesConfiguration = require('./config/jeeves.config.ts');
+jeevesConfiguration.config();
 
 const slackEventHandler = require('./handlers/slack_event.ts');
 const landingPageHandler = require('./handlers/landing_page.ts');
@@ -12,7 +13,6 @@ const host = process.env.HOST || '0.0.0.0';
 
 const app = express();
 
-jeevesConfiguration.config();
 app.use(express.json()); // for parsing application/json
 app.use(express.static(path.join(__dirname,'..','landing-page/public')));
 
