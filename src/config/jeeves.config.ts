@@ -13,9 +13,9 @@ const config = () => {
     if(process.env.HEROKU_KEEP_ALIVE_URL){
         require('./heroku.config.ts').config();
     }
-
-    console.log("init bonito")
 };
 
 
-module.exports = config;
+module.exports = {
+    config: config
+};

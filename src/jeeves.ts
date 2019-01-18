@@ -6,6 +6,7 @@ const log = require('debug')('app:log');
 const express = require("express");
 const Promise = require('promise');
 
+const jeevesConfiguration = require('./config/jeeves.config.ts');
 
 const {mergeHandler} = require("./commands/merge.ts");
 const {doneHandler} = require("./commands/done.ts");
@@ -16,6 +17,8 @@ const port = process.env.PORT || 4521;
 const host = process.env.HOST || '0.0.0.0';
 
 const app = express();
+
+jeevesConfiguration.config();
 app.use(express.json()); // for parsing application/json
 app.use(express.static(path.join(__dirname,'..','landing-page/public')));
 
