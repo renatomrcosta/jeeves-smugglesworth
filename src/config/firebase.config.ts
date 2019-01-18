@@ -14,4 +14,6 @@ const initFirebase = () => {
     });
 };
 
-module.exports = initFirebase;
+module.exports = {
+    config: initFirebase
+};

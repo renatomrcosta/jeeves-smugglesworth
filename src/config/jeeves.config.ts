@@ -6,13 +6,15 @@ const config = () => {
 
     //Configures Firebase for storing the queue
     if(process.env.FIREBASE){
-        require('./firebase.config.ts')();
+        require('./firebase.config.ts').config();
     }
 
     //If deployed in heroku, and configured to, trigger a keep alive.
     if(process.env.HEROKU_KEEP_ALIVE_URL){
-        require('./heroku.config.ts')();
+        require('./heroku.config.ts').config();
     }
+
+    console.log("init bonito")
 };
 
 

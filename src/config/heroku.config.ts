@@ -14,4 +14,6 @@ const keepHerokuAlive = () => {
     }
 };
 
-module.exports = keepHerokuAlive;
+module.exports = {
+    config: keepHerokuAlive
+};
