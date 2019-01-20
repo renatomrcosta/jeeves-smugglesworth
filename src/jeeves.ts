@@ -7,6 +7,7 @@ jeevesConfiguration.config();
 
 const slackEventHandler = require('./handlers/slack_event.ts');
 const landingPageHandler = require('./handlers/landing_page.ts');
+const keepAliveHandler = require('./handlers/keep_alive.ts');
 
 const port = process.env.PORT || 4521;
 const host = process.env.HOST || '0.0.0.0';
@@ -18,6 +19,10 @@ app.use(express.static(path.join(__dirname,'..','landing-page/public')));
 
 app.route('/').get((req, res) => {
     landingPageHandler.handle(res);
+});
+
+app.route('/keep-alive').get((req, res) => {
+    keepAliveHandler.handle(res);
 });
 
 app.route('/jeeves')

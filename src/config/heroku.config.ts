@@ -1,6 +1,6 @@
 const https = require('https');
 
-const url = process.env.HEROKU_KEEP_ALIVE_URL;
+const url = process.env.HEROKU_KEEP_ALIVE_URL + 'keep-alive';
 
 const KEEP_ALIVE_TIMER = 600000;
 
