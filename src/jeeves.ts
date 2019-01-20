@@ -1,5 +1,4 @@
 const express = require("express");
-const path = require("path");
 const log = require('debug')('app:log');
 
 const jeevesConfiguration = require('./config/jeeves.config.ts');
@@ -15,10 +14,10 @@ const host = process.env.HOST || '0.0.0.0';
 const app = express();
 
 app.use(express.json()); // for parsing application/json
-app.use(express.static(path.join(__dirname,'..','landing-page/public')));
+
 
 app.route('/').get((req, res) => {
-    landingPageHandler.handle(res);
+    landingPageHandler.handle(res, app);
 });
 
 app.route('/keep-alive').get((req, res) => {
