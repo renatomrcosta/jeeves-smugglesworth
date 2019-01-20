@@ -1,5 +1,4 @@
 const express = require("express");
-const path = require("path");
 const log = require('debug')('app:log');
 
 const jeevesConfiguration = require('./config/jeeves.config.ts');
