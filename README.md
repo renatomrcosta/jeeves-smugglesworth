@@ -57,6 +57,9 @@ Example: https://071e360d.ngrok.io/jeeves
 
 Save your changes and jeeves should be working.
 
+#### Updating the Landing page
+To update the landing page, please check its repo at https://github.com/renatomrcosta/jeeves-landing-page
+
 #### Donations
 
 This has been a work of passion from the start. More than a simple slack butler or a funny joke, we have always considered the wellbeing and comfort of our fellow coworkers and coders out there. That is what drives us to spend time away from our families to deliver these products and solutions, flawed as they may be.
