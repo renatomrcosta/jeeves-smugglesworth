@@ -6,7 +6,7 @@ const {statusHandler} = require("../commands/status.ts");
 const {helpHandler} = require("../commands/help.ts");
 
 const handleEvent = (payload) => {
-//Calling the event as a promise to return asap.
+    //Calling the event as a promise to return asap.
     return new Promise((resolve, reject) => {
         if(payload.event && payload.event.type === 'app_mention'){
             //Check which event, in order or importance

@@ -18,7 +18,7 @@ const buildStatusMessage = (docSnapshot) => {
 const statusHandler = (payload) => {
     const channel_id = payload.event.channel;
 
-    queueService.getQueueByChannelId(channel_id).then((channelSnapshot) => {
+    queueService.getById(channel_id).then((channelSnapshot) => {
         if(channelSnapshot.empty){
             messageService.sendMessage(payload.event.channel, messageList.queueIsEmpty);
         } else {
