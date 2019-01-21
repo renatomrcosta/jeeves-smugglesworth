@@ -7,7 +7,7 @@ const {helpHandler} = require("../commands/help.ts");
 
 const handleEvent = (payload) => {
 //Calling the event as a promise to return asap.
-    new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
         if(payload.event && payload.event.type === 'app_mention'){
             //Check which event, in order or importance
             const request_text = payload.event.text.toUpperCase();
