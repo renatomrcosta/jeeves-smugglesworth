@@ -3,7 +3,7 @@ const firestore = admin.firestore();
 firestore.settings({timestampsInSnapshots: true});
 
 const add = (channel_id, user_id) => {
-    firestore.collection('queues').add({
+    return firestore.collection('queues').add({
         channel_id: channel_id,
         user_id: user_id,
         queue_timestamp: new Date()
@@ -30,10 +30,8 @@ const remove = (doc) => {
 
 //Exports a 'service'-like object.
 module.exports = {
-    dal: {
-        add: add,
-        remove: remove,
-        update: update,
-        getById: getById
-    }
+    add: add,
+    remove: remove,
+    update: update,
+    getById: getById
 };

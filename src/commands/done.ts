@@ -6,7 +6,7 @@ const doneHandler = (payload, event_type) => {
     const channel_id = payload.event.channel;
     const user_id = payload.event.user;
 
-    queueService.getQueueByChannelId(channel_id).then((channelSnapshot) => {
+    queueService.getById(channel_id).then((channelSnapshot) => {
        if(channelSnapshot.empty){
            messageService.sendMessage(payload.event.channel, messageList.noMergeInProcess);
        } else {
@@ -20,7 +20,7 @@ const doneHandler = (payload, event_type) => {
                const message = (event_type === 'DONE' ? messageList.mergedSuccessfully : messageList.kickedFromQueue);
                const mentionedUser = (event_type === 'DONE' ? user_id : doc.get('user_id'));
 
-               queueService.deleteQueue(doc).then(() => {
+               queueService.remove(doc).then(() => {
                    messageService.sendMessage(channel_id, message.replace('%s', messageService.mentionSlackUser(mentionedUser))).then(() => {
                        callNextUserInQueue(channel_id, channelSnapshot.docs);
                    });

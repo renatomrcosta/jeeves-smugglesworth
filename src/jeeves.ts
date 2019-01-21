@@ -39,8 +39,8 @@ app.route('/jeeves')
         slackEventHandler
             .handle(payload)
             .then((eventType) => {
-            log("Event Complete: ", eventType);
-        });
+                log("Event Complete: ", eventType);
+        }, (error) => {console.log(error)});
     });
 
 app.listen(port, host, () => log(`Jeeves app Live on host ${host} on port ${port}!`));
