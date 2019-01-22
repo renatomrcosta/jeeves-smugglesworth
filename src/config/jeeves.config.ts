@@ -1,3 +1,4 @@
+//The configuration files use require to load the ENV properly
 const config = () => {
     //Loads the .env file for local execution of Jeeves.
     if(process.env.NODE_ENV !== 'production'){
