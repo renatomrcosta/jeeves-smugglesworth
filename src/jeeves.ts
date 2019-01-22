@@ -3,7 +3,7 @@ import express from "express";
 import jeevesConfiguration from './config/jeeves.config';
 jeevesConfiguration.config();
 
-// import slackEventHandler from './handlers/slack_event.ts';
+import slackEventHandler from './handlers/slack_event';
 import landingPageHandler from './handlers/landing_page';
 import keepAliveHandler from './handlers/keep_alive';
 
@@ -36,12 +36,15 @@ app.route('/jeeves')
             challenge: challenge
         });
 
-        // //Handle the event in its own component.
-        // slackEventHandler
-        //     .handle(payload)
-        //     .then((eventType) => {
-        //         log("Event Complete: ", eventType);
-        // }, (error) => {console.log(error)});
+        //Handle the event in its own component.
+        slackEventHandler
+            .handle(payload)
+            .then((eventType) => {
+                console.log("Event Complete: ", eventType);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
     });
 
 app.listen(port, host, () => console.log(`Jeeves app Live on host ${host} on port ${port}!`));
