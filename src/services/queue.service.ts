@@ -1,5 +1,4 @@
-let dal: DAL;
-
+let dal: any;
 if(process.env.FIREBASE){
     dal = require('../dal/firebase.dal');
 } else {

@@ -28,7 +28,7 @@ const remove = (doc: admin.firestore.DocumentSnapshot) => {
     return doc.ref.delete();
 };
 
-export default {
+module.exports = {
     add: add,
     remove: remove,
     update: update,
