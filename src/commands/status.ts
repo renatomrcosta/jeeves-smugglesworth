@@ -1,6 +1,6 @@
-const {messageService} = require("../services/messages.service.ts");
-const {queueService} = require('../services/queue.service.ts');
-const messageList = require('../messages.json');
+import messageService from "../services/messages.service";
+import queueService from '../services/queue.service';
+import messageList from '../messages.json';
 
 //TODO - Change this not to use a firebase type, but something more agnostic
 const buildStatusMessage = (docSnapshot: any) => {

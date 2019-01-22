@@ -5,7 +5,8 @@
   "main": "src/jeeves.ts",
   "scripts": {
     "build": "tsc",
-    "start": "node src/jeeves.ts",
+    "prestart": "tsc",
+    "start": "node dist/jeeves.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "firebase deploy"
   },
