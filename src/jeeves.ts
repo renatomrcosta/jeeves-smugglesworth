@@ -3,9 +3,9 @@ import express from "express";
 import jeevesConfiguration from './config/jeeves.config';
 jeevesConfiguration.config();
 
-// const slackEventHandler = require('./handlers/slack_event.ts');
-// const landingPageHandler = require('./handlers/landing_page.ts');
-// const keepAliveHandler = require('./handlers/keep_alive.ts');
+// import slackEventHandler from './handlers/slack_event.ts';
+import landingPageHandler from './handlers/landing_page';
+import keepAliveHandler from './handlers/keep_alive';
 
 const port = Number(process.env.PORT) || 4521;
 const host = process.env.HOST || '0.0.0.0';
@@ -15,17 +15,16 @@ const app = express();
 app.use(express.json()); // for parsing application/json
 
 
-app.route('/').get((req, res) => {
-    // landingPageHandler.handle(res, app);
-    console.log('oi');
+app.route('/').get((req: express.Request, res: express.Response) => {
+    landingPageHandler.handle(res, app);
 });
 
-app.route('/keep-alive').get((req, res) => {
-    // keepAliveHandler.handle(res);
+app.route('/keep-alive').get((req: express.Request, res: express.Response) => {
+    keepAliveHandler.handle(res);
 });
 
 app.route('/jeeves')
-    .post((req, res) => {
+    .post((req: express.Request, res: express.Response) => {
         // const payload = req.body;
         // const challenge = payload.challenge;
         //
