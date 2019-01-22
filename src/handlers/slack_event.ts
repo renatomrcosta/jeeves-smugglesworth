@@ -2,7 +2,7 @@ import Promise from 'promise';
 
 // const {mergeHandler} = require("../commands/merge.ts");
 // const {doneHandler} = require("../commands/done.ts");
-// const {statusHandler} = require("../commands/status.ts");
+import statusCommand from "../commands/status";
 import helpCommand from "../commands/help";
 
 const handleEvent = (payload: Payload) => {
@@ -21,7 +21,7 @@ const handleEvent = (payload: Payload) => {
                 // doneHandler(payload, 'KICK');
                 resolve("KICK");
             } else if(request_text.includes('STATUS')){
-                // statusHandler(payload);
+                statusCommand.handle(payload);
                 resolve("STATUS");
             }  else if(request_text.includes('HELP')) {
                 helpCommand.handle(payload);
