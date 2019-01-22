@@ -1,7 +1,7 @@
-import express from "express";
+const KEEP_ALIVE_MESSAGE = "Hello There";
 
-const keepAliveHandler = (res: express.Response) => {
-    return res.status(200).send("Hello there!");
+const keepAliveHandler = () => {
+    return KEEP_ALIVE_MESSAGE;
 };
 
 export default {
