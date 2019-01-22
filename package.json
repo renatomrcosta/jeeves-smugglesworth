@@ -8,7 +8,7 @@
     "prestart": "tsc",
     "start": "node dist/jeeves.js",
     "lint": "tslint --project .",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "deploy": "firebase deploy"
   },
   "repository": {
@@ -37,6 +37,9 @@
     "tslint": "^5.12.1"
   },
   "devDependencies": {
+    "@types/jest": "^23.3.13",
+    "jest": "^23.6.0",
+    "ts-jest": "^23.10.5",
     "typescript": "^2.9.2"
   }
 }

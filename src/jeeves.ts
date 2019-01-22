@@ -20,7 +20,7 @@ app.route("/").get((req: express.Request, res: express.Response) => {
 });
 
 app.route("/keep-alive").get((req: express.Request, res: express.Response) => {
-    keepAliveHandler.handle(res);
+    res.status(200).send(keepAliveHandler.handle());
 });
 
 app.route("/jeeves")
