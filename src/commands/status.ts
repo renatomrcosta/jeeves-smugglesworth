@@ -16,7 +16,7 @@ const buildStatusMessage = (docSnapshot: any) => {
     return statusMessage;
 };
 
-const statusHandler = (payload: Payload) => {
+const statusHandler = (payload: IPayload) => {
     const channel_id = payload.event.channel;
 
     //TODO - Change this not to use a firebase type, but something more agnostic

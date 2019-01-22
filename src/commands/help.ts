@@ -1,7 +1,7 @@
 import messageService from '../services/messages.service';
 import messageList from '../messages.json';
 
-const helpCommand = (payload: Payload) => {
+const helpCommand = (payload: IPayload) => {
     messageService.sendSlackMessageByObject(payload.event.channel, messageList.help);
 };
 export default {

@@ -2,7 +2,7 @@ import messageService from '../services/messages.service';
 import messageList from '../messages.json';
 import queueService from '../services/queue.service';
 
-const doneHandler = (payload: Payload, event_type: string) => {
+const doneHandler = (payload: IPayload, event_type: string) => {
     const channel_id = payload.event.channel;
     const user_id = payload.event.user;
 
