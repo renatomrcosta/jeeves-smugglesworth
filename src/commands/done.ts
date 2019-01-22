@@ -1,41 +1,43 @@
-import messageService from '../services/messages.service';
-import messageList from '../messages.json';
-import queueService from '../services/queue.service';
+import messageList from "../messages.json";
+import messageService from "../services/messages.service";
+import queueService from "../services/queue.service";
 
-const doneHandler = (payload: Payload, event_type: string) => {
-    const channel_id = payload.event.channel;
-    const user_id = payload.event.user;
+const doneHandler = (payload: IPayload, eventType: string) => {
+    const channelId = payload.event.channel;
+    const userId = payload.event.user;
 
-    queueService.getById(channel_id).then((channelSnapshot: any) => {
-       if(channelSnapshot.empty){
+    queueService.getById(channelId).then((channelSnapshot: any) => {
+       if (channelSnapshot.empty) {
            messageService.sendMessage(payload.event.channel, messageList.noMergeInProcess);
        } else {
            const doc = channelSnapshot.docs[0];
-           const snapshotUserId = doc.get('user_id');
-           if(event_type === 'DONE' && snapshotUserId !== user_id){
+           const snapshotUserId = doc.get("user_id");
+           if (eventType === "DONE" && snapshotUserId !== userId) {
                messageService.sendMessage(payload.event.channel,
-                   messageList.waitYourTurn.replace('%s', messageService.mentionSlackUser(snapshotUserId)));
+                   messageList.waitYourTurn.replace("%s", messageService.mentionSlackUser(snapshotUserId)));
            } else {
-               const doc = channelSnapshot.docs.shift();
-               const message = (event_type === 'DONE' ? messageList.mergedSuccessfully : messageList.kickedFromQueue);
-               const mentionedUser = (event_type === 'DONE' ? user_id : doc.get('user_id'));
+               const document = channelSnapshot.docs.shift();
+               const message = (eventType === "DONE" ? messageList.mergedSuccessfully : messageList.kickedFromQueue);
+               const mentionedUser = (eventType === "DONE" ? userId : document.get("user_id"));
 
-               queueService.remove(doc).then(() => {
-                   messageService.sendMessage(channel_id, message.replace('%s', messageService.mentionSlackUser(mentionedUser))).then(() => {
-                       callNextUserInQueue(channel_id, channelSnapshot.docs);
-                   });
+               queueService.remove(document).then(() => {
+                   messageService
+                       .sendMessage(channelId, message.replace("%s", messageService.mentionSlackUser(mentionedUser)))
+                       .then(() => {
+                            callNextUserInQueue(channelId, channelSnapshot.docs);
+                       });
                }).catch((errormsg: any) => console.error(errormsg));
            }
        }
     });
 
-    const callNextUserInQueue = (channel_id: string, documents: any) => {
-        if(documents.length > 0){
-            messageService.sendMessage(channel_id,
-                messageList.nextTurn.replace('%s', messageService.mentionSlackUser(documents[0].get('user_id'))));
+    const callNextUserInQueue = (channelId: string, documents: any) => {
+        if (documents.length > 0) {
+            messageService.sendMessage(channelId,
+                messageList.nextTurn.replace("%s", messageService.mentionSlackUser(documents[0].get("user_id"))));
         }
     };
 };
 export default {
-    handle: doneHandler
+    handle: doneHandler,
 };

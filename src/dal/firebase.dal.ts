@@ -1,26 +1,26 @@
-import admin from 'firebase-admin';
+import admin from "firebase-admin";
 const firestore: admin.firestore.Firestore = admin.firestore();
 firestore.settings({timestampsInSnapshots: true});
 
-const add = (channel_id: string, user_id: string) => {
-    return firestore.collection('queues').add({
-        channel_id: channel_id,
-        user_id: user_id,
-        queue_timestamp: new Date()
+const add = (channelId: string, userId: string) => {
+    return firestore.collection("queues").add({
+        channel_id: channelId,
+        queue_timestamp: new Date(),
+        user_id: userId,
     });
 };
 
-const getById = (channel_id: string) => {
-    return firestore.collection('queues')
-        .where('channel_id', '==', channel_id)
-        .orderBy('queue_timestamp', 'asc')
+const getById = (channelId: string) => {
+    return firestore.collection("queues")
+        .where("channel_id", "==", channelId)
+        .orderBy("queue_timestamp", "asc")
         .get();
 };
 
 const update = (doc: admin.firestore.DocumentSnapshot) => {
     return doc.ref.update({
+        dequeue_timestamp: new Date(),
         merged: true,
-        dequeue_timestamp: new Date()
     });
 };
 
@@ -29,8 +29,8 @@ const remove = (doc: admin.firestore.DocumentSnapshot) => {
 };
 
 module.exports = {
-    add: add,
-    remove: remove,
-    update: update,
-    getById: getById
+    add,
+    getById,
+    remove,
+    update,
 };

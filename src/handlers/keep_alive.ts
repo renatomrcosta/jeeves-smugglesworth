@@ -5,5 +5,5 @@ const keepAliveHandler = (res: express.Response) => {
 };
 
 export default {
-    handle: keepAliveHandler
+    handle: keepAliveHandler,
 };

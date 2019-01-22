@@ -7,6 +7,7 @@
     "build": "tsc",
     "prestart": "tsc",
     "start": "node dist/jeeves.js",
+    "lint": "tslint --project .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "firebase deploy"
   },
@@ -32,10 +33,10 @@
     "jeeves-landing-page": "^1.0.0",
     "moment": "^2.23.0",
     "momentjs": "^2.0.0",
-    "promise": "^8.0.2"
+    "promise": "^8.0.2",
+    "tslint": "^5.12.1"
   },
   "devDependencies": {
-    "tslint": "^5.12.1",
     "typescript": "^2.9.2"
   }
 }
