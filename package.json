@@ -9,7 +9,8 @@
     "start": "node dist/jeeves.js",
     "lint": "tslint --project .",
     "test": "jest",
-    "deploy": "firebase deploy"
+    "deploy": "firebase deploy",
+    "heroku-postbuild": "echo Skip build on Heroku"
   },
   "repository": {
     "type": "git",
@@ -41,5 +42,6 @@
     "jest": "^23.6.0",
     "ts-jest": "^23.10.5",
     "typescript": "^2.9.2"
-  }
+  },
+  "heroku-run-build-script": true
 }
