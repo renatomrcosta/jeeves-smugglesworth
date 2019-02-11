@@ -1,30 +1,30 @@
-const Promise = require('promise');
+import Promise from "promise";
 
-const {mergeHandler} = require("../commands/merge.ts");
-const {doneHandler} = require("../commands/done.ts");
-const {statusHandler} = require("../commands/status.ts");
-const {helpHandler} = require("../commands/help.ts");
+import doneCommand from "../commands/done";
+import helpCommand from "../commands/help";
+import mergeCommand from "../commands/merge";
+import statusCommand from "../commands/status";
 
-const handleEvent = (payload) => {
-    //Calling the event as a promise to return asap.
+const handleEvent = (payload: IPayload) => {
+    // Calling the event as a promise to return asap.
     return new Promise((resolve, reject) => {
-        if(payload.event && payload.event.type === 'app_mention'){
-            //Check which event, in order or importance
-            const request_text = payload.event.text.toUpperCase();
-            if(request_text.includes('MERGE')){
-                mergeHandler(payload);
+        if (payload.event && payload.event.type === "app_mention") {
+            // Check which event, in order or importance
+            const requestText = payload.event.text.toUpperCase();
+            if (requestText.includes("MERGE")) {
+                mergeCommand.handle(payload);
                 resolve("MERGE");
-            } else if(request_text.includes('DONE')){
-                doneHandler(payload, 'DONE');
+            } else if (requestText.includes("DONE")) {
+                doneCommand.handle(payload, "DONE");
                 resolve("DONE");
-            } else if(request_text.includes('KICK')){
-                doneHandler(payload, 'KICK');
+            } else if (requestText.includes("KICK")) {
+                doneCommand.handle(payload, "KICK");
                 resolve("KICK");
-            } else if(request_text.includes('STATUS')){
-                statusHandler(payload);
+            } else if (requestText.includes("STATUS")) {
+                statusCommand.handle(payload);
                 resolve("STATUS");
-            }  else if(request_text.includes('HELP')) {
-                helpHandler(payload);
+            }  else if (requestText.includes("HELP")) {
+                helpCommand.handle(payload);
                 resolve("HELP");
             }
             reject();
@@ -32,6 +32,6 @@ const handleEvent = (payload) => {
     });
 };
 
-module.exports = {
-    handle: handleEvent
+export default {
+    handle: handleEvent,
 };

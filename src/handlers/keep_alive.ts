@@ -1,7 +1,9 @@
-const keepAliveHandler = (res) => {
-    return res.status(200).send("Hello there!");
+const KEEP_ALIVE_MESSAGE = "Hello There";
+
+const keepAliveHandler = () => {
+    return KEEP_ALIVE_MESSAGE;
 };
 
-module.exports = {
-    handle: keepAliveHandler
+export default {
+    handle: keepAliveHandler,
 };

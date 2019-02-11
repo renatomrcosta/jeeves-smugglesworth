@@ -1,23 +1,23 @@
-const {messageService} = require("../services/messages.service.ts");
-const {queueService} = require('../services/queue.service.ts');
-const messageList = require('../messages.json');
+import messageList from "../messages.json";
+import messageService from "../services/messages.service";
+import queueService from "../services/queue.service";
 
-const merge = (payload) => {
-    const channel_id = payload.event.channel;
-    const user_id = payload.event.user;
+const merge = (payload: IPayload) => {
+    const channelId = payload.event.channel;
+    const userId = payload.event.user;
 
-    queueService.getById(channel_id).then((channelSnapshot) => {
-        if(channelSnapshot.empty){
-            messageService.sendMessage(channel_id, messageList.firstInLine.replace("%s", messageService.mentionSlackUser(user_id)));
+    queueService.getById(channelId).then((channelSnapshot: any) => {
+        if (channelSnapshot.empty) {
+            messageService
+                .sendMessage(channelId, messageList.firstInLine.replace("%s", messageService.mentionSlackUser(userId)));
         } else {
-            messageService.sendMessage(channel_id, messageList.waitForABit.replace("%s",messageService.mentionSlackUser(user_id)));
+            messageService
+                .sendMessage(channelId, messageList.waitForABit.replace("%s", messageService.mentionSlackUser(userId)));
         }
-        queueService.add(channel_id, user_id);
+        queueService.add(channelId, userId);
     });
 };
 
-
-
-module.exports = {
-    mergeHandler: merge
+export default {
+    handle: merge,
 };

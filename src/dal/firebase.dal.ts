@@ -1,37 +1,36 @@
-const admin = require('firebase-admin');
-const firestore = admin.firestore();
+import admin from "firebase-admin";
+const firestore: admin.firestore.Firestore = admin.firestore();
 firestore.settings({timestampsInSnapshots: true});
 
-const add = (channel_id, user_id) => {
-    return firestore.collection('queues').add({
-        channel_id: channel_id,
-        user_id: user_id,
-        queue_timestamp: new Date()
+const add = (channelId: string, userId: string) => {
+    return firestore.collection("queues").add({
+        channel_id: channelId,
+        queue_timestamp: new Date(),
+        user_id: userId,
     });
 };
 
-const getById = (channel_id) => {
-    return firestore.collection('queues')
-        .where('channel_id', '==', channel_id)
-        .orderBy('queue_timestamp', 'asc')
+const getById = (channelId: string) => {
+    return firestore.collection("queues")
+        .where("channel_id", "==", channelId)
+        .orderBy("queue_timestamp", "asc")
         .get();
 };
 
-const update = (doc) => {
+const update = (doc: admin.firestore.DocumentSnapshot) => {
     return doc.ref.update({
+        dequeue_timestamp: new Date(),
         merged: true,
-        dequeue_timestamp: new Date()
     });
 };
 
-const remove = (doc) => {
+const remove = (doc: admin.firestore.DocumentSnapshot) => {
     return doc.ref.delete();
 };
 
-//Exports a 'service'-like object.
 module.exports = {
-    add: add,
-    remove: remove,
-    update: update,
-    getById: getById
+    add,
+    getById,
+    remove,
+    update,
 };

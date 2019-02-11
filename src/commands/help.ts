@@ -1,9 +1,9 @@
-const {messageService} = require("../services/messages.service.ts");
-const messageList = require('../messages.json');
+import messageList from "../messages.json";
+import messageService from "../services/messages.service";
 
-const helpHandler = (payload) => {
+const helpCommand = (payload: IPayload) => {
     messageService.sendSlackMessageByObject(payload.event.channel, messageList.help);
 };
-module.exports = {
-    helpHandler: helpHandler
+export default {
+    handle: helpCommand,
 };

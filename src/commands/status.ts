@@ -1,33 +1,35 @@
-const {messageService} = require("../services/messages.service.ts");
-const {queueService} = require('../services/queue.service.ts');
-const messageList = require('../messages.json');
+import messageList from "../messages.json";
+import messageService from "../services/messages.service";
+import queueService from "../services/queue.service";
 
-const buildStatusMessage = (docSnapshot) => {
+// TODO - Change this not to use a firebase type, but something more agnostic
+const buildStatusMessage = (docSnapshot: any) => {
     let statusMessage = messageList.showQueue;
-    docSnapshot.forEach((document) => {
-        const userMention = messageService.mentionSlackUser(document.get('user_id'));
-        const timestamp = messageService.printRelativeTime(document.get('queue_timestamp'));
+    docSnapshot.forEach((document: any) => {
+        const userMention = messageService.mentionSlackUser(document.get("user_id"));
+        const timestamp = messageService.printRelativeTime(document.get("queue_timestamp"));
 
-        //Status message will be something like: @Renato Costa (a few seconds ago);
+        // Status message will be something like: @Renato Costa (a few seconds ago);
         statusMessage += `${userMention } (${timestamp})\n`;
     });
 
     return statusMessage;
 };
 
-const statusHandler = (payload) => {
-    const channel_id = payload.event.channel;
+const statusHandler = (payload: IPayload) => {
+    const channelId = payload.event.channel;
 
-    queueService.getById(channel_id).then((channelSnapshot) => {
-        if(channelSnapshot.empty){
+    // TODO - Change this not to use a firebase type, but something more agnostic
+    queueService.getById(channelId).then((channelSnapshot: any) => {
+        if (channelSnapshot.empty) {
             messageService.sendMessage(payload.event.channel, messageList.queueIsEmpty);
         } else {
-            let statusMessage = buildStatusMessage(channelSnapshot);
+            const statusMessage = buildStatusMessage(channelSnapshot);
             messageService.sendMessage(payload.event.channel, statusMessage);
         }
     });
 
 };
-module.exports = {
-    statusHandler: statusHandler
+export default {
+    handle: statusHandler,
 };
