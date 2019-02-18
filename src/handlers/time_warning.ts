@@ -5,7 +5,7 @@ import messageService from "../services/messages.service";
 import queueService from "../services/queue.service";
 
 // Three hour warning threshold, initially.
-const WARNING_THRESHOLD = 3 * 60 * 1000;
+const WARNING_THRESHOLD = 60 * 1000;
 
 
 /***
