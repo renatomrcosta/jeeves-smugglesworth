@@ -13,7 +13,7 @@ const WARNING_HOUR_THRESHOLD = 3;
 const handleEvent = () => {
     console.log("Configured the time warning with the following Hour Threshold", WARNING_HOUR_THRESHOLD);
 
-    const warningInterval = interval(15 * 1000);
+    const warningInterval = interval(60 * 60 * 1000);
     warningInterval.subscribe(() => {
         queueService
             .getQueuesByHour(WARNING_HOUR_THRESHOLD)
