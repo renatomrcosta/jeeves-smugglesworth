@@ -13,6 +13,8 @@ const WARNING_THRESHOLD = 60 * 1000;
  * warning to whoever is in the queue more than 3h.
  * */
 const handleEvent = () => {
+    console.log("Configured the time warning with the following Threshold", WARNING_THRESHOLD);
+
     const warningInterval = interval(60000);
     warningInterval.subscribe(() => {
         // Query the open queues
