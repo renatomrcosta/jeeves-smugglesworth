@@ -17,6 +17,13 @@ const getById = (channelId: string) => {
         .get();
 };
 
+const getAll = () => {
+    return firestore.collection("queues")
+        .orderBy("channel_id", "asc")
+        .orderBy("queue_timestamp", "asc")
+        .get();
+};
+
 const update = (doc: admin.firestore.DocumentSnapshot) => {
     return doc.ref.update({
         dequeue_timestamp: new Date(),
@@ -30,6 +37,7 @@ const remove = (doc: admin.firestore.DocumentSnapshot) => {
 
 module.exports = {
     add,
+    getAll,
     getById,
     remove,
     update,
