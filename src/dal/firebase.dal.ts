@@ -17,6 +17,24 @@ const getById = (channelId: string) => {
         .get();
 };
 
+const getAll = () => {
+    return firestore.collection("queues")
+        .orderBy("channel_id", "asc")
+        .orderBy("queue_timestamp", "asc")
+        .get();
+};
+
+const getAllOlderThanHours = (hours: number) => {
+    const hourParameter = new Date();
+    hourParameter.setHours(hourParameter.getHours() - hours);
+
+    return firestore.collection("queues")
+        .where("queue_timestamp", "<", hourParameter)
+        .orderBy("queue_timestamp", "asc")
+        .orderBy("channel_id", "asc")
+        .get();
+};
+
 const update = (doc: admin.firestore.DocumentSnapshot) => {
     return doc.ref.update({
         dequeue_timestamp: new Date(),
@@ -30,6 +48,8 @@ const remove = (doc: admin.firestore.DocumentSnapshot) => {
 
 module.exports = {
     add,
+    getAll,
+    getAllOlderThanHours,
     getById,
     remove,
     update,

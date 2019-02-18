@@ -11,8 +11,16 @@ const addToQueue = (channelId: string, userId: string) => {
     return dal.add(channelId, userId);
 };
 
-const getQueueByChannelId = (channelId: string) => {
+const getQueuesByChannelId = (channelId: string) => {
     return dal.getById(channelId);
+};
+
+const getQueues = () => {
+    return dal.getAll();
+};
+
+const getQueuesByHour = ( hours: number ) => {
+    return dal.getAllOlderThanHours(hours);
 };
 
 // TODO - change this to use something more agnostic.
@@ -26,7 +34,9 @@ const deleteQueue = (doc: any) => {
 
 export default {
     add: addToQueue,
-    getById: getQueueByChannelId,
+    getById: getQueuesByChannelId,
+    getQueues,
+    getQueuesByHour,
     remove: deleteQueue,
     update: updateQueue,
 };

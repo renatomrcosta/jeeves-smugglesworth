@@ -39,13 +39,14 @@ This file will contain the environment variables for this application. They shou
 - `FIREBASE_PROJECT_ID=`
 - `FIREBASE_CLIENT_EMAIL=`
 - `FIREBASE_PRIVATE_KEY=`
+- `TIMEOUT_WARNING=`
 
 Then run the jeeves.ts file:
 
-`node src/jeeves.ts`
+`node dist/jeeves.ts`
 
 or
-`npm start`
+`npm run start`
 
 Have ngrok installed (https://ngrok.com/) and open your local port to the web:
 
