@@ -6,6 +6,7 @@
   "scripts": {
     "build": "tsc",
     "prestart": "tsc",
+    "tsc": "tsc",
     "start": "node dist/jeeves.js",
     "lint": "tslint --project .",
     "test": "jest",
