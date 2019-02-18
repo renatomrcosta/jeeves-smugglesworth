@@ -6,6 +6,12 @@ jeevesConfiguration.config();
 import keepAliveHandler from "./handlers/keep_alive";
 import landingPageHandler from "./handlers/landing_page";
 import slackEventHandler from "./handlers/slack_event";
+import timeWarningHandler from "./handlers/time_warning";
+
+// Starts the timeout thingie if configured
+if(process.env.TIMEOUT_WARNING) {
+    timeWarningHandler.handle();
+}
 
 const port = Number(process.env.PORT) || 4521;
 const host = process.env.HOST || "0.0.0.0";
