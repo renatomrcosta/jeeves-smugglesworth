@@ -19,6 +19,10 @@ const getQueues = () => {
     return dal.getAll();
 };
 
+const getQueuesByHour = ( hours: number ) => {
+    return dal.getAllOlderThanHours(hours);
+};
+
 // TODO - change this to use something more agnostic.
 const updateQueue = (doc: any) => {
     return dal.update(doc);
@@ -32,6 +36,7 @@ export default {
     add: addToQueue,
     getById: getQueuesByChannelId,
     getQueues,
+    getQueuesByHour,
     remove: deleteQueue,
     update: updateQueue,
 };
