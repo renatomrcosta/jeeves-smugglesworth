@@ -5,7 +5,7 @@
   "main": "src/jeeves.ts",
   "scripts": {
     "build": "tsc",
-    "prestart": "tsc",
+    "prestart": "npm run tsc",
     "tsc": "tsc",
     "start": "node dist/jeeves.js",
     "lint": "tslint --project .",
@@ -36,7 +36,8 @@
     "moment": "^2.23.0",
     "momentjs": "^2.0.0",
     "promise": "^8.0.2",
-    "tslint": "^5.12.1"
+    "tslint": "^5.12.1",
+    "typescript": "^2.9.2"
   },
   "devDependencies": {
     "@types/jest": "^23.3.13",
