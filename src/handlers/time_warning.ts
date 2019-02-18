@@ -1,8 +1,8 @@
-import { interval } from "rxjs";
-
 import messageList from "../messages.json";
 import messageService from "../services/messages.service";
 import queueService from "../services/queue.service";
+
+import {interval} from "rxjs";
 
 // Three hour warning threshold, initially.
 const WARNING_THRESHOLD = 60 * 1000;
@@ -23,8 +23,8 @@ const handleEvent = () => {
         // Send a warning per top queue that is more than 3h old.
         queueService
             .getQueues()
-            .filter( queue  => queue.queue_timestamp.getDate() < dateThreshold)
-            .forEach( queue => {
+            .filter( (queue: IQueue)  => +queue.queue_timestamp < dateThreshold)
+            .forEach( (queue: IQueue) => {
                 messageService.sendMessage(queue.channel_id,
                     messageList.timeoutWarning.replace("%s", messageService.mentionSlackUser(queue.user_id)));
             });
