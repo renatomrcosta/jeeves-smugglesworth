@@ -37,7 +37,8 @@
     "momentjs": "^2.0.0",
     "promise": "^8.0.2",
     "tslint": "^5.12.1",
-    "typescript": "^2.9.2"
+    "typescript": "^2.9.2",
+    "rxjs": "latest"
   },
   "devDependencies": {
     "@types/jest": "^23.3.13",
