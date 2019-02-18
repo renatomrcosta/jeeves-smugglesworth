@@ -4,6 +4,9 @@ import messageList from "../messages.json";
 import messageService from "../services/messages.service";
 import queueService from "../services/queue.service";
 
+// Three hour warning threshold, initially.
+const WARNING_THRESHOLD = 3 * 60 * 1000;
+
 const warningInterval = interval(60000);
 
 /***
@@ -12,9 +15,17 @@ const warningInterval = interval(60000);
  * */
 const handleEvent = () => {
     warningInterval.subscribe(() => {
-        // Query the TOP of open queues
-        queueService.
+        // Query the open queues
+
+        const dateThreshold = Date.now() - WARNING_THRESHOLD;
         // Send a warning per top queue that is more than 3h old.
+        queueService
+            .getQueues()
+            .filter( queue  => queue.queue_timestamp.getDate() < dateThreshold)
+            .forEach( queue => {
+                messageService.sendMessage(queue.channel_id,
+                    messageList.timeoutWarning.replace("%s", messageService.mentionSlackUser(queue.user_id)));
+            });
     });
 };
 
