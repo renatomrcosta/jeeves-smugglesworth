@@ -1,6 +1,7 @@
 {
   "showQueue": "The queue currently looks like this: \n",
   "nextTurn": "It's %s's turn!",
+  "timeoutWarning": "Hey %s, are you still merging? Is everything OK there buddy?",
   "kickedFromQueue": "%s is being kicked from the merging queue!",
   "queueIsEmpty": "The queue is already empty!",
   "noMergeInProcess": "There is no merging in process",
