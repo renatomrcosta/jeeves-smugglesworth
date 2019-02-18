@@ -34,8 +34,6 @@ app.route("/jeeves")
         const payload: IPayload = req.body;
         const challenge = payload.challenge;
 
-        console.log(payload);
-
         // We must reply 200 in under 3s to Slack, and in case a random "challenge" is sent, it has to be delivered back
         // Event API thingie
         res.status(200).send({
