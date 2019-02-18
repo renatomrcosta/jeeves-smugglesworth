@@ -7,13 +7,13 @@ import queueService from "../services/queue.service";
 // Three hour warning threshold, initially.
 const WARNING_THRESHOLD = 3 * 60 * 1000;
 
-const warningInterval = interval(60000);
 
 /***
  * The time warning event, requested in issue #30; Once every hour, it will query the top of the queues and send a
  * warning to whoever is in the queue more than 3h.
  * */
 const handleEvent = () => {
+    const warningInterval = interval(60000);
     warningInterval.subscribe(() => {
         // Query the open queues
 
