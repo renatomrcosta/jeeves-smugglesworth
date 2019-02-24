@@ -30,7 +30,7 @@ app.route("/keep-alive").get((req: express.Request, res: express.Response) => {
 });
 
 app.route("/jeeves")
-    .post((req: express.Request, res: express.Response) => {
+    .post(async (req: express.Request, res: express.Response) => {
         const payload: IPayload = req.body;
         const challenge = payload.challenge;
 
@@ -40,15 +40,12 @@ app.route("/jeeves")
             challenge,
         });
 
-        // Handle the event in its own component.
-        slackEventHandler
-            .handle(payload)
-            .then((eventType) => {
-                console.log("Event Complete: ", eventType);
-            })
-            .catch((error) => {
-                console.log(error);
-            });
+        try {
+            const eventType = await slackEventHandler.handle(payload);
+            console.log("Event Complete: ", eventType);
+        } catch(error) {
+            console.log(error);
+        }
     });
 
 app.listen(port, host, () => console.log(`Jeeves app Live on host ${host} on port ${port}!`));
